@@ -1,0 +1,77 @@
+{
+  "boundary_minus_outward_ari_gain": {
+    "ci_high": 0.11874216475497508,
+    "ci_low": -0.013405538230009048,
+    "mean": 0.052668313262483016,
+    "n": 19,
+    "sd": 0.13708706746360494
+  },
+  "boundary_minus_outward_boundary_decision_changes": {
+    "ci_high": 0.23923925773846574,
+    "ci_low": 0.0010218770323295323,
+    "mean": 0.12013056738539764,
+    "n": 19,
+    "sd": 0.2471213755684887
+  },
+  "boundary_minus_outward_boundary_score": {
+    "ci_high": 0.2683584752056768,
+    "ci_low": 0.03444342357379397,
+    "mean": 0.1514009493897354,
+    "n": 19,
+    "sd": 0.24265823574289655
+  },
+  "boundary_nig_ari_gain": {
+    "ci_high": 0.11843976036173995,
+    "ci_low": -0.012728769728794505,
+    "mean": 0.05285549531647272,
+    "n": 19,
+    "sd": 0.13607129543270396
+  },
+  "boundary_nig_score_gain": {
+    "ci_high": 0.13656795274824257,
+    "ci_low": -0.017099093452465172,
+    "mean": 0.05973442964788869,
+    "n": 19,
+    "sd": 0.1594107521630021
+  },
+  "checks": {
+    "boundary_nig_ari": false,
+    "boundary_nig_density": false,
+    "complete_primary_pairs": false,
+    "numerical_stability": true,
+    "orientation_ari": false,
+    "outward_ari_equivalence": true,
+    "outward_nig_density": false,
+    "student_t_control": true
+  },
+  "complete": true,
+  "equivalence_margin": 0.01,
+  "fit_failures": 0,
+  "invalid_fit_rate": 0.01,
+  "invalid_fits": 18,
+  "n_diagnostic_files": 120,
+  "n_diagnostic_rows": 1800,
+  "outward_nig_ari_gain_90_ci": {
+    "ci_high": 0.002326501063065819,
+    "ci_low": -0.001832118629025656,
+    "mean": 0.0002471912170200815,
+    "n": 20,
+    "sd": 0.005377814972988774
+  },
+  "outward_nig_score_gain": {
+    "ci_high": 0.0024338115303282203,
+    "ci_low": -0.006849019459842672,
+    "mean": -0.0022076039647572258,
+    "n": 20,
+    "sd": 0.009917249194506846
+  },
+  "passed": false,
+  "primary_valid_pairs": 19,
+  "student_t_control_best_enrichment": {
+    "ci_high": 0.007323451541219215,
+    "ci_low": 0.0010231509147846565,
+    "mean": 0.004173301228001936,
+    "n": 20,
+    "sd": 0.00673088321642586
+  }
+}

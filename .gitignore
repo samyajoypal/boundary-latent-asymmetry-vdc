@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.spl
+paper/submission_bundle_rebuilt/
+paper/submission_bundle_rebuilt.zip

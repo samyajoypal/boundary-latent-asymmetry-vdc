@@ -1,0 +1,90 @@
+{
+  "boundary_minus_outward_ari_gain": {
+    "ci_high": 0.04843755336087287,
+    "ci_low": 0.009485647762517386,
+    "mean": 0.028961600561695125,
+    "n": 98,
+    "sd": 0.09714306634202513
+  },
+  "boundary_minus_outward_boundary_decision_changes": {
+    "ci_high": 0.05429802477345804,
+    "ci_low": -0.043963779009937455,
+    "mean": 0.005167122881760292,
+    "n": 98,
+    "sd": 0.24505740546414875
+  },
+  "boundary_minus_outward_boundary_score": {
+    "ci_high": 0.04859543408417147,
+    "ci_low": 0.00015944673408065796,
+    "mean": 0.024377440409126063,
+    "n": 98,
+    "sd": 0.12079563914043816
+  },
+  "boundary_nig_ari_gain": {
+    "ci_high": 0.051283096550899396,
+    "ci_low": 0.016221254838330767,
+    "mean": 0.03375217569461508,
+    "n": 99,
+    "sd": 0.08789786889174546
+  },
+  "boundary_nig_score_gain": {
+    "ci_high": 0.05653334279738783,
+    "ci_low": 0.0166945532668134,
+    "mean": 0.036613948032100614,
+    "n": 99,
+    "sd": 0.09987338165721628
+  },
+  "checks": {
+    "complete_primary_pairs": true,
+    "confirmatory_holm_family": true,
+    "numerical_stability": true,
+    "orientation_ari_ci": true,
+    "outward_ari_equivalence": false,
+    "provenance": true,
+    "student_t_control": true
+  },
+  "complete": true,
+  "complete_control_seeds": 98,
+  "confirmatory_tests": {
+    "boundary_ari": {
+      "mean": 0.03375217569461508,
+      "n": 99,
+      "p_holm": 0.0003504557391835068,
+      "p_one_sided": 0.0001168185797278356
+    },
+    "boundary_density": {
+      "mean": 0.036613948032100614,
+      "n": 99,
+      "p_holm": 0.0004262148629226225,
+      "p_one_sided": 0.00021310743146131126
+    },
+    "orientation_ari": {
+      "mean": 0.028961600561695125,
+      "n": 98,
+      "p_holm": 0.0019835094439926548,
+      "p_one_sided": 0.0019835094439926548
+    }
+  },
+  "equivalence_margin": 0.01,
+  "fit_failures": 0,
+  "invalid_fit_rate": 0.010222222222222223,
+  "invalid_fits": 46,
+  "n_diagnostic_files": 300,
+  "n_diagnostic_rows": 4500,
+  "outward_nig_ari_gain_90_ci": {
+    "ci_high": 0.012070575904025507,
+    "ci_low": -0.0072149457381477,
+    "mean": 0.0024278150829389043,
+    "n": 99,
+    "sd": 0.05777856038119739
+  },
+  "passed": false,
+  "primary_valid_pairs": 98,
+  "student_t_control_best_enrichment": {
+    "ci_high": 0.006027800390077184,
+    "ci_low": 0.003048644047941383,
+    "mean": 0.0045382222190092835,
+    "n": 98,
+    "sd": 0.007429787522374297
+  }
+}

@@ -1,0 +1,104 @@
+[experiment]
+name = "paper2_nig_orientation_confirmation"
+kind = "simulation"
+output_dir = "results/paper2_nig_orientation_confirmation"
+
+[arguments]
+scenarios = ["parametric"]
+design_id = "placeholder"
+methods = ["ghvade_mvt"]
+seeds = [700]
+n_samples = 1800
+input_dim = 16
+n_components = 3
+fit_n_components = 3
+latent_dim = 2
+hidden_dims = [128, 64]
+matched_center_scale = 0.65
+matched_cluster_scale = 0.75
+matched_noise = 0.12
+matched_decoder_width = 96
+dgp_family = "nig"
+dgp_alpha_bar = 0.3
+dgp_lambda = 0.7
+dgp_skew_orientation = "radial"
+dgp_component_families = ["student_t", "student_t", "nig"]
+skew_strength = 5.0
+tail_df = 5.0
+outlier_rate = 0.0
+covariance_ratio = 1.5
+class_probs = [1.0, 1.0, 1.0]
+mixture_pretrain_epochs = 80
+mixture_pretrain_lr = 0.001
+mixture_initial_logvar = -4.0
+mixture_affine_gauge = false
+mixture_epochs = 40
+mixture_cycles = 3
+mixture_lr = 0.0008
+mixture_prior_lr = 0.0003
+mixture_latent_anchor_weight = 0.0
+mixture_posterior_anchor_weight = 0.0
+mixture_mc_samples = 3
+mixture_refit_mc_samples = 5
+mixture_eval_mc_samples = 64
+mixture_validation_mc_samples = 5
+mixture_selection_fraction = 0.20
+mixture_neural_validation_fraction = 0.10
+latent_signal_selection_fraction = 0.30
+mixture_temperature = 1.0
+mixture_mi_weight = 0.0
+mixture_grad_clip = 10.0
+mixture_patience = 10
+prior_acceptance_tolerance = 0.000001
+prior_selection_rule = "best_score"
+beta = 1.0
+recon_variance = 1.0
+batch_size = 128
+diag_gmm_iter = 100
+fmvmm_iter = 15
+fmvmm_tol = 0.0001
+gh_mstep_nit = 75
+fmvmm_standardize = true
+fmvmm_initialization = "gmm"
+fmvmm_debug = false
+fmvmm_fit_timeout_seconds = 300.0
+fmvmm_path = ""
+fmvmm_jobs = 1
+torch_threads = 4
+device = "cpu"
+
+[protocol]
+version = 2
+pilot_seeds = [699]
+final_seeds = [700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719]
+methods = ["ghvade_mvt"]
+
+[[protocol.cells]]
+id = "student_t_unrestricted"
+tier = "core"
+arguments = { dgp_family = "student_t", dgp_component_families = ["student_t", "student_t", "student_t"], skew_strength = 0.0, dgp_skew_orientation = "radial", mixture_affine_gauge = false }
+
+[[protocol.cells]]
+id = "student_t_affine_gauge"
+tier = "core"
+arguments = { dgp_family = "student_t", dgp_component_families = ["student_t", "student_t", "student_t"], skew_strength = 0.0, dgp_skew_orientation = "radial", mixture_affine_gauge = true }
+
+[[protocol.cells]]
+id = "nig_boundary_unrestricted"
+tier = "core"
+arguments = { dgp_family = "nig", dgp_component_families = ["student_t", "student_t", "nig"], dgp_alpha_bar = 0.3, skew_strength = 5.0, dgp_skew_orientation = "clockwise_neighbor", mixture_affine_gauge = false }
+
+[[protocol.cells]]
+id = "nig_boundary_affine_gauge"
+tier = "core"
+arguments = { dgp_family = "nig", dgp_component_families = ["student_t", "student_t", "nig"], dgp_alpha_bar = 0.3, skew_strength = 5.0, dgp_skew_orientation = "clockwise_neighbor", mixture_affine_gauge = true }
+
+[[protocol.cells]]
+id = "nig_outward_unrestricted"
+tier = "core"
+arguments = { dgp_family = "nig", dgp_component_families = ["student_t", "student_t", "nig"], dgp_alpha_bar = 0.3, skew_strength = 5.0, dgp_skew_orientation = "radial", mixture_affine_gauge = false }
+
+[[protocol.cells]]
+id = "nig_outward_affine_gauge"
+tier = "core"
+arguments = { dgp_family = "nig", dgp_component_families = ["student_t", "student_t", "nig"], dgp_alpha_bar = 0.3, skew_strength = 5.0, dgp_skew_orientation = "radial", mixture_affine_gauge = true }
