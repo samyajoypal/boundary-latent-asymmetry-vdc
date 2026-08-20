@@ -3,6 +3,11 @@
 This repository is the reproducibility release for the manuscript
 **Boundary-Relevant Latent Asymmetry in Variational Deep Clustering**.
 
+The current manuscript snapshot is frozen at tag
+`paper2-neurocomputing-r2-2026-08-20`. Its official Elsevier source, compiled
+article and supplement, and flat upload archive are in `paper/`; the archive is
+`paper/submission_ready_neurocomputing_r2.zip`.
+
 The paper studies when a flexible latent component changes a clustering
 partition rather than only improving density fit. It reports a 600-run adaptive
 family study, a failed 20-seed NIG orientation confirmation, and an independent
@@ -79,7 +84,7 @@ Build the flat Elsevier source package:
 
 ```bash
 .venv/bin/python publication_scripts/build_paper2_submission.py \
-  --output-dir paper/submission_bundle_rebuilt
+  --output-dir paper/submission_rebuilt_local
 ```
 
 ## Rerun a frozen task
