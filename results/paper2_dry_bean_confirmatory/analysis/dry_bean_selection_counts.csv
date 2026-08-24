@@ -1,0 +1,3 @@
+count,frequency,selected_family
+18,0.9,gaussian
+2,0.1,skew_normal

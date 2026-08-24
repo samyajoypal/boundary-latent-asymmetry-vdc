@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import shutil
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -16,14 +17,11 @@ MANUSCRIPT = PAPER / "manuscript"
 TABLES = MANUSCRIPT / "tables"
 FIGURES = MANUSCRIPT / "figures"
 
-V9 = (
-    ROOT
-    / "results"
-    / "shape_dominant"
-)
+V9 = ROOT / "results" / "shape_dominant"
 REPLICATION = ROOT / "results" / "nig_orientation_replication"
 CONFIRMATION = ROOT / "results" / "nig_orientation_confirmation"
 REPLICATION_RUNS = ROOT / "results" / "paper2_nig_orientation_replication"
+DRY_BEAN = ROOT / "results" / "paper2_dry_bean_confirmatory" / "analysis"
 
 METHODS = ("vade_diag", "ghvade_mvt", "ghvade_adaptive")
 METHOD_LABELS = {
@@ -45,6 +43,34 @@ DESIGN_LABELS = {
 }
 DESIGN_ORDER = tuple(DESIGN_LABELS)
 ASYMMETRIC = {"skew_normal", "skew_t", "nig", "full_gh"}
+DRY_BEAN_METHOD_ORDER = (
+    "raw_kmeans",
+    "raw_gmm",
+    "dec",
+    "idec",
+    "vade_diag",
+    "ghvade_mvt",
+    "ghvade_adaptive",
+)
+DRY_BEAN_METHOD_LABELS = {
+    "raw_kmeans": "K-means",
+    "raw_gmm": "Gaussian mixture",
+    "dec": "DEC",
+    "idec": "IDEC",
+    "vade_diag": "Gaussian VaDE",
+    "ghvade_mvt": "Student-$t$ GH-VaDE",
+    "ghvade_adaptive": "Adaptive GH-VaDE",
+}
+DRY_BEAN_FAMILY_LABELS = {
+    "gaussian": "Gaussian",
+    "student_t": "Student-$t$",
+    "skew_normal": "Skew-normal",
+    "variance_gamma": "Variance-gamma",
+    "hyperbolic": "Hyperbolic",
+    "nig": "NIG",
+    "skew_t": "Skew-$t$",
+    "full_gh": "Full GH",
+}
 
 
 def _write(path: Path, text: str) -> None:
@@ -209,11 +235,8 @@ def _selection_table(data: pd.DataFrame) -> None:
     truth_order = ("gaussian", "student_t", "skew_normal", "skew_t", "nig", "full_gh")
     counts = pd.crosstab(selector["true_family"], selector["selected_family"])
     lines = [
-        r"\begin{table*}[t]",
-        r"\centering",
-        r"\caption{Final selected-family counts in the shape-dominant study. Each control truth has 20 runs and each asymmetric truth has 40 runs (two strengths). Variance-gamma was never selected.}",
-        r"\label{tab:selection-counts}",
-        r"\begin{tabular}{lrrrrrrr}",
+        r"\begin{longtable}{lrrrrrrr}",
+        r"\caption{Final selected-family counts in the shape-dominant study. Each control truth has 20 runs and each asymmetric truth has 40 runs (two strengths). Variance-gamma was never selected.}\label{tab:selection-counts}\\",
         r"\toprule",
         r"Truth & Gaussian & Student-$t$ & Skew-normal & Hyperbolic & NIG & Skew-$t$ & Full GH \\",
         r"\midrule",
@@ -222,7 +245,7 @@ def _selection_table(data: pd.DataFrame) -> None:
         values = [int(counts.get(family, pd.Series(dtype=int)).get(truth, 0)) for family in families]
         label = {"student_t": "Student-$t$", "skew_normal": "Skew-normal", "skew_t": "Skew-$t$", "full_gh": "Full GH", "nig": "NIG", "gaussian": "Gaussian"}[truth]
         lines.append(label + " & " + " & ".join(str(value) for value in values) + r" \\")
-    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table*}"])
+    lines.extend([r"\bottomrule", r"\end{longtable}"])
     _write(TABLES / "selection_counts.tex", "\n".join(lines))
 
 
@@ -332,7 +355,7 @@ def _numerical_table() -> None:
     grouped = data.groupby("family")["fit_seconds"].agg(["mean", "median"])
     invalid = data.assign(invalid=~data["fit_valid"]).groupby("family")["invalid"].agg(["sum", "count"])
     lines = [
-        r"\begin{table}[t]",
+        r"\begin{table}[htbp]",
         r"\centering",
         r"\caption{Numerical and computational audit for the 100-seed replication. Fit times are seconds per family--representation fit; task wall time includes neural training and all 15 diagnostic fits.}",
         r"\label{tab:numerical}",
@@ -374,10 +397,9 @@ def _stage_and_validity_tables() -> None:
         & data["comparison_valid"]
     ]
     lines = [
-        r"\begin{table*}[t]",
-        r"\centering",
-        r"\caption{NIG-minus-Student-$t$ effects by representation stage in the independent replication. Intervals are 95\% Student-$t$ intervals over valid seed-level comparisons.}",
-        r"\label{tab:stage-effects}",
+        r"\begin{supplementtable}{tab:stage-effects}{NIG-minus-Student-$t$ effects by representation stage in the independent replication. Intervals are 95\% Student-$t$ intervals over valid seed-level comparisons.}",
+        r"\small",
+        r"\setlength{\tabcolsep}{4pt}",
         r"\begin{tabular}{llccc}",
         r"\toprule",
         r"Orientation & Stage & Held-out score $\Delta$ & ARI $\Delta$ & Decision-change fraction \\",
@@ -401,7 +423,9 @@ def _stage_and_validity_tables() -> None:
             lines.append(f"{prefix} & {stage_label} & " + " & ".join(cells) + r" \\")
         if design == "nig_boundary":
             lines.append(r"\midrule")
-    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table*}"])
+    lines.extend(
+        [r"\bottomrule", r"\end{tabular}", r"\end{supplementtable}"]
+    )
     _write(TABLES / "stage_effects.tex", "\n".join(lines))
 
     audit = data.assign(invalid=~data["fit_valid"]).groupby(
@@ -415,11 +439,8 @@ def _stage_and_validity_tables() -> None:
         "full_gh": "Full GH",
     }
     validity = [
-        r"\begin{table}[t]",
-        r"\centering",
-        r"\caption{Invalid fits by candidate family and representation stage in the independent replication. Each cell has 300 fits.}",
-        r"\label{tab:validity-stage}",
-        r"\begin{tabular}{lrrr}",
+        r"\begin{longtable}{lrrr}",
+        r"\caption{Invalid fits by candidate family and representation stage in the independent replication. Each cell has 300 fits.}\label{tab:validity-stage}\\",
         r"\toprule",
         r"Family & Oracle & Pretrained & Final \\",
         r"\midrule",
@@ -427,7 +448,7 @@ def _stage_and_validity_tables() -> None:
     for family in ("gaussian", "student_t", "nig", "skew_t", "full_gh"):
         values = [int(audit.loc[(family, stage), "sum"]) for stage in ("oracle", "pretrained", "final")]
         validity.append(f"{family_labels[family]} & " + " & ".join(map(str, values)) + r" \\")
-    validity.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}"])
+    validity.extend([r"\bottomrule", r"\end{longtable}"])
     _write(TABLES / "validity_by_stage.tex", "\n".join(validity))
 
 
@@ -566,11 +587,195 @@ def _latent_geometry_figure() -> None:
     plt.close(fig)
 
 
-def _macros(v9_summaries: dict[str, dict[str, float | int]], replication: dict[str, object]) -> None:
+def _wall_time_cell(mean_seconds: float, sd_seconds: float) -> str:
+    if mean_seconds >= 3600.0:
+        return f"{mean_seconds / 3600.0:.2f} $\\pm$ {sd_seconds / 3600.0:.2f} h"
+    if mean_seconds >= 120.0:
+        return f"{mean_seconds / 60.0:.2f} $\\pm$ {sd_seconds / 60.0:.2f} min"
+    return f"{mean_seconds:.2f} $\\pm$ {sd_seconds:.2f} s"
+
+
+def _p_value_cell(value: float) -> str:
+    return "$<10^{-4}$" if value < 1e-4 else f"{value:.4f}"
+
+
+def _dry_bean_outputs() -> dict[str, object]:
+    summary_path = DRY_BEAN / "dry_bean_confirmatory_summary.json"
+    if not summary_path.exists():
+        raise FileNotFoundError(
+            "Run scripts/analyze_paper2_dry_bean_confirmatory.py before generating Paper 2."
+        )
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    if summary.get("analysis_mode") != "descriptive_fallback":
+        raise RuntimeError("Dry Bean outputs must come from descriptive-fallback mode.")
+    if summary.get("pilot_gate_passed") is not False or summary.get("n_rows") != 140:
+        raise RuntimeError("The failed pilot gate or complete 140-task matrix is not recorded.")
+
+    methods = pd.read_csv(DRY_BEAN / "dry_bean_method_summary.csv")
+    if set(methods["method"]) != set(DRY_BEAN_METHOD_ORDER):
+        raise RuntimeError("Dry Bean method table does not contain the frozen seven methods.")
+    methods = methods.set_index("method").loc[list(DRY_BEAN_METHOD_ORDER)]
+    maxima = methods[["acc_mean", "ari_mean", "nmi_mean"]].max(axis=0)
+    lines = [
+        r"\begin{table}[t]",
+        r"\centering",
+        r"\caption{Dry Bean descriptive fallback study over 20 unseen paired seeds. Values are mean $\pm$ standard deviation. The original label-blinded promotion gate failed; these external metrics are therefore descriptive and are retained regardless of direction.}",
+        r"\label{tab:dry-bean-performance}",
+        r"\begin{tabular}{lcccc}",
+        r"\toprule",
+        r"Method & ACC & ARI & NMI & Wall time per run \\",
+        r"\midrule",
+    ]
+    for method, row in methods.iterrows():
+        cells = []
+        for metric in ("acc", "ari", "nmi"):
+            cell = f"{row[f'{metric}_mean']:.3f} $\\pm$ {row[f'{metric}_sd']:.3f}"
+            if np.isclose(row[f"{metric}_mean"], maxima[f"{metric}_mean"]):
+                cell = r"\textbf{" + cell + "}"
+            cells.append(cell)
+        runtime = _wall_time_cell(
+            float(row["runtime_seconds_mean"]), float(row["runtime_seconds_sd"])
+        )
+        lines.append(
+            f"{DRY_BEAN_METHOD_LABELS[method]} & "
+            + " & ".join(cells)
+            + f" & {runtime} \\\\"
+        )
+    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}"])
+    _write(TABLES / "dry_bean_performance.tex", "\n".join(lines))
+
+    contrasts = pd.read_csv(DRY_BEAN / "dry_bean_paired_contrasts.csv")
+    if len(contrasts) != 6 or contrasts["holm_p"].isna().any():
+        raise RuntimeError("Dry Bean paired contrasts are incomplete or unadjusted.")
+    comparator_labels = {
+        "ghvade_mvt": "Student-$t$ GH-VaDE",
+        "vade_diag": "Gaussian VaDE",
+    }
+    contrast_lines = [
+        r"\begin{longtable}{llrcrr}",
+        r"\caption{Paired adaptive-GH-VaDE differences in the Dry Bean fallback study. Confidence intervals are two-sided 95\% Student-$t$ intervals over 20 seed pairs. Holm adjustment covers all six exploratory tests.}\label{tab:dry-bean-contrasts}\\",
+        r"\toprule",
+        r"Comparator & Metric & Mean $\Delta$ & 95\% CI & Holm $p$ & Adaptive wins \\",
+        r"\midrule",
+    ]
+    for comparator in ("ghvade_mvt", "vade_diag"):
+        subset = contrasts[contrasts["comparator"].eq(comparator)].set_index("metric")
+        for metric_index, metric in enumerate(("acc", "ari", "nmi")):
+            row = subset.loc[metric]
+            label = comparator_labels[comparator] if metric_index == 0 else ""
+            contrast_lines.append(
+                f"{label} & {metric.upper()} & {row['mean_difference']:+.4f} & "
+                f"[{row['ci95_low']:+.4f}, {row['ci95_high']:+.4f}] & "
+                f"{_p_value_cell(float(row['holm_p']))} & "
+                f"{int(row['adaptive_wins'])}/20 \\\\"
+            )
+        if comparator == "ghvade_mvt":
+            contrast_lines.append(r"\midrule")
+    contrast_lines.extend([r"\bottomrule", r"\end{longtable}"])
+    _write(TABLES / "dry_bean_contrasts.tex", "\n".join(contrast_lines))
+
+    stage = pd.read_csv(DRY_BEAN / "dry_bean_selector_stages.csv")
+    if len(stage) != 20:
+        raise RuntimeError("Expected 20 Dry Bean selector-stage rows.")
+    pilot = pd.read_csv(DRY_BEAN / "dry_bean_pilot_selector_stages.csv")
+    if len(pilot) != 5 or not pilot["external_metrics_blinded"].all():
+        raise RuntimeError("Expected five blinded Dry Bean pilot selector histories.")
+    pilot_initial = pilot["initial_active_family"]
+    pilot_final = pilot["final_active_family"]
+
+    def family_counts(values: list[str] | pd.Series) -> list[int]:
+        counts = pd.Series(list(values), dtype=str).value_counts()
+        return [int(counts.get(family, 0)) for family in ("gaussian", "student_t", "skew_normal")]
+
+    stage_rows = (
+        ("Blinded pilot", "Initial fit", 5, family_counts(pilot_initial)),
+        ("", "Final cycle", 5, family_counts(pilot_final)),
+        (
+            "Unseen-seed fallback",
+            "Initial fit",
+            20,
+            family_counts(stage["initial_active_family"]),
+        ),
+        ("", "Final cycle", 20, family_counts(stage["final_active_family"])),
+    )
+    stage_lines = [
+        r"\begin{longtable}{llrrrr}",
+        r"\caption{Dry Bean active-family transitions. Family selection uses no class label. Families absent from all four rows are omitted.}\label{tab:dry-bean-selector-stages}\\",
+        r"\toprule",
+        r"Study & Stage & $n$ & Gaussian & Student-$t$ & Skew-normal \\",
+        r"\midrule",
+    ]
+    for row_index, (study, stage_name, n_runs, counts) in enumerate(stage_rows):
+        stage_lines.append(
+            f"{study} & {stage_name} & {n_runs} & "
+            + " & ".join(str(value) for value in counts)
+            + r" \\"
+        )
+        if row_index == 1:
+            stage_lines.append(r"\midrule")
+    stage_lines.extend([r"\bottomrule", r"\end{longtable}"])
+    _write(TABLES / "dry_bean_selector_stages.tex", "\n".join(stage_lines))
+
+    candidates = pd.read_csv(DRY_BEAN / "dry_bean_candidate_audit.csv")
+    if int(candidates["attempts"].sum()) != 640:
+        raise RuntimeError("Expected 640 adaptive candidate-fit attempts.")
+    candidate_lines = [
+        r"\begin{longtable}{lrrrr}",
+        r"\caption{Candidate-fit audit for the 20-run Dry Bean adaptive procedure. Attempt time includes failed attempts. Every successful fit required the alternate K-means initialization after the primary Gaussian-mixture initialization returned no worked distribution.}\label{tab:dry-bean-candidate-audit}\\",
+        r"\toprule",
+        r"Candidate & Successful/attempted & Failed & Alternate successes & Mean attempt time (s) \\",
+        r"\midrule",
+    ]
+    family_order = (
+        "gaussian",
+        "student_t",
+        "skew_normal",
+        "variance_gamma",
+        "hyperbolic",
+        "nig",
+        "skew_t",
+        "full_gh",
+    )
+    candidates = candidates.set_index("candidate")
+    for family in family_order:
+        row = candidates.loc[family]
+        candidate_lines.append(
+            f"{DRY_BEAN_FAMILY_LABELS[family]} & "
+            f"{int(row['successful_fits'])}/{int(row['attempts'])} & "
+            f"{int(row['failed_fits'])} & "
+            f"{int(row['alternate_initialization_successes'])} & "
+            f"{row['fit_seconds_mean']:.1f} \\\\"
+        )
+    candidate_lines.extend([r"\bottomrule", r"\end{longtable}"])
+    _write(TABLES / "dry_bean_candidate_audit.tex", "\n".join(candidate_lines))
+
+    boundary_source = DRY_BEAN / "dry_bean_boundary_margin.pdf"
+    if not boundary_source.exists():
+        raise FileNotFoundError(boundary_source)
+    shutil.copy2(boundary_source, FIGURES / "dry_bean_boundary_margin.pdf")
+    return {"summary": summary, "methods": methods, "contrasts": contrasts}
+
+
+def _macros(
+    v9_summaries: dict[str, dict[str, float | int]],
+    replication: dict[str, object],
+    dry_bean: dict[str, object],
+) -> None:
     ari = v9_summaries["ari"]
     orientation = replication["boundary_minus_outward_ari_gain"]
     boundary = replication["boundary_nig_ari_gain"]
     score = replication["boundary_nig_score_gain"]
+    dry_summary = dry_bean["summary"]
+    dry_methods = dry_bean["methods"]
+    dry_contrasts = dry_bean["contrasts"]
+    assert isinstance(dry_summary, dict)
+    assert isinstance(dry_methods, pd.DataFrame)
+    assert isinstance(dry_contrasts, pd.DataFrame)
+    dry_t = dry_contrasts[dry_contrasts["comparator"].eq("ghvade_mvt")].set_index(
+        "metric"
+    )
+    dry_selector = dry_summary["selector_stage_summary"]
+    dry_numerical = dry_summary["numerical_audit"][0]
     lines = [
         f"\\newcommand{{\\VnineAriDelta}}{{{ari['mean']:+.4f}}}",
         f"\\newcommand{{\\VnineAriCi}}{{[{ari['ci_low']:+.4f}, {ari['ci_high']:+.4f}]}}",
@@ -581,6 +786,16 @@ def _macros(v9_summaries: dict[str, dict[str, float | int]], replication: dict[s
         f"\\newcommand{{\\BoundaryScoreDelta}}{{{score['mean']:+.4f}}}",
         f"\\newcommand{{\\BoundaryScoreCi}}{{[{score['ci_low']:+.4f}, {score['ci_high']:+.4f}]}}",
         f"\\newcommand{{\\ReplicationInvalidRate}}{{{100.0 * float(replication['invalid_fit_rate']):.2f}\\%}}",
+        f"\\newcommand{{\\DryBeanAdaptiveTAccDelta}}{{{dry_t.loc['acc', 'mean_difference']:+.4f}}}",
+        f"\\newcommand{{\\DryBeanAdaptiveTAriDelta}}{{{dry_t.loc['ari', 'mean_difference']:+.4f}}}",
+        f"\\newcommand{{\\DryBeanAdaptiveTNmiDelta}}{{{dry_t.loc['nmi', 'mean_difference']:+.4f}}}",
+        f"\\newcommand{{\\DryBeanBoundaryConcentration}}{{{dry_selector['final_boundary_concentration_mean']:.2f}}}",
+        f"\\newcommand{{\\DryBeanDecisionChangeRate}}{{{100.0 * dry_selector['final_decision_change_fraction_mean']:.2f}\\%}}",
+        f"\\newcommand{{\\DryBeanFinalShapeMargin}}{{{dry_selector['final_asymmetric_margin_mean']:+.4f}}}",
+        f"\\newcommand{{\\DryBeanCandidateFailures}}{{{int(dry_numerical['failed_candidate_fits_total'])}}}",
+        f"\\newcommand{{\\DryBeanCandidateRuntimeShare}}{{{100.0 * dry_numerical['candidate_fit_share_of_wall_time']:.2f}\\%}}",
+        f"\\newcommand{{\\DryBeanAdaptiveRuntimeHours}}{{{dry_methods.loc['ghvade_adaptive', 'runtime_seconds_mean'] / 3600.0:.2f}}}",
+        f"\\newcommand{{\\DryBeanStudentRuntimeMinutes}}{{{dry_methods.loc['ghvade_mvt', 'runtime_seconds_mean'] / 60.0:.2f}}}",
     ]
     _write(TABLES / "results_values.tex", "\n".join(lines))
 
@@ -599,7 +814,8 @@ def main() -> None:
     _v9_effect_figure(data)
     _orientation_figure()
     _latent_geometry_figure()
-    _macros(summaries, replication)
+    dry_bean = _dry_bean_outputs()
+    _macros(summaries, replication, dry_bean)
     print(f"Wrote Paper 2 artifacts to {MANUSCRIPT}")
 
 

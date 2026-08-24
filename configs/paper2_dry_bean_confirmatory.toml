@@ -1,0 +1,85 @@
+[experiment]
+name = "paper2_dry_bean_confirmatory"
+kind = "realdata"
+output_dir = "results/paper2_dry_bean_confirmatory"
+
+[arguments]
+datasets = ["dry_bean"]
+methods = ["ghvade_adaptive"]
+seeds = [4200]
+max_samples = 13611
+contamination = 0.0
+contamination_mode = "uniform"
+corruption_severity = 0.5
+latent_dim = 4
+hidden_dims = [128, 64]
+batch_size = 128
+ae_epochs = 80
+dec_epochs = 40
+mixture_pretrain_epochs = 80
+mixture_pretrain_lr = 0.001
+mixture_initial_logvar = -4.0
+mixture_affine_gauge = false
+mixture_epochs = 40
+mixture_cycles = 3
+mixture_lr = 0.0008
+mixture_prior_lr = 0.0003
+mixture_latent_anchor_weight = 0.0
+mixture_posterior_anchor_weight = 0.0
+mixture_mc_samples = 3
+mixture_refit_mc_samples = 5
+mixture_eval_mc_samples = 64
+mixture_validation_mc_samples = 5
+mixture_selection_fraction = 0.20
+mixture_neural_validation_fraction = 0.10
+mixture_temperature = 1.0
+mixture_mi_weight = 0.0
+mixture_grad_clip = 10.0
+mixture_patience = 10
+prior_acceptance_tolerance = 0.000001
+prior_selection_rule = "shape_gated"
+shape_skew_threshold = 0.25
+shape_score_margin = 0.01
+safe_minimum_weight = 0.0001
+safe_minimum_covariance_eigenvalue = 0.00001
+safe_maximum_covariance_condition = 1000000.0
+safe_minimum_interior_shape = 0.0001
+beta = 1.0
+recon_variance = 1.0
+diag_gmm_iter = 100
+fmvmm_iter = 15
+fmvmm_tol = 0.0001
+gh_mstep_nit = 75
+fmvmm_standardize = true
+fmvmm_initialization = "gmm"
+fmvmm_debug = false
+fmvmm_fit_timeout_seconds = 600.0
+fmvmm_path = ""
+fmvmm_jobs = 1
+adaptive_families = ["mvn", "mvt", "mvsn", "mvvg", "mvhb", "mnig", "mgst", "mghp"]
+torch_threads = 4
+device = "cpu"
+data_home = "data/uci"
+download_datasets = false
+blind_external_metrics = false
+
+[protocol]
+version = 1
+pilot_seeds = [4200, 4201, 4202, 4203, 4204]
+final_seeds = [
+  4200, 4201, 4202, 4203, 4204,
+  4205, 4206, 4207, 4208, 4209,
+  4210, 4211, 4212, 4213, 4214,
+  4215, 4216, 4217, 4218, 4219,
+]
+datasets = ["dry_bean"]
+methods = [
+  "raw_kmeans",
+  "raw_gmm",
+  "dec",
+  "idec",
+  "vade_diag",
+  "ghvade_mvt",
+  "ghvade_adaptive",
+]
+

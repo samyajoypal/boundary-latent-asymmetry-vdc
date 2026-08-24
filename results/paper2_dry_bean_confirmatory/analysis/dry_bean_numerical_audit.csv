@@ -1,0 +1,2 @@
+candidate_fit_seconds_mean,candidate_fit_seconds_sd,candidate_fit_share_of_wall_time,cpu_to_wall_ratio,failed_candidate_fits_total,method,n_runs,peak_rss_mb_mean,peak_rss_mb_sd,prior_updates_total,regular_final_priors,rejected_prior_updates_total,runtime_hours_total,runtime_seconds_mean,runtime_seconds_sd
+27294.464822865593,1110.0686513802275,0.996755913383629,3.8642967035100813,74,ghvade_adaptive,20,916.64453125,27.60770179374107,80,20,5,152.12943675231085,27383.298615415955,1126.5590776287868

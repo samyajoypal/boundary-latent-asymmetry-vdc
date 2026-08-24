@@ -6,7 +6,7 @@ authors:
     given-names: Samyajoy
     email: samyajoy.pal@rptu.de
     affiliation: "Chair of Data Analytics, Technical University of Kaiserslautern-Landau"
-date-released: 2026-08-20
-version: "paper2-neurocomputing-r2-2026-08-20"
+date-released: 2026-08-24
+version: "paper2-neurocomputing-r3-2026-08-24"
 repository-code: "https://github.com/samyajoypal/boundary-latent-asymmetry-vdc"
 license: MIT

@@ -1,0 +1,25 @@
+{
+  "blinded_rows": 0,
+  "config_sha256": "761bba0c4c7937061f9003870417fe9fa20451a26e6f56fe90806234b02cf80a",
+  "dataset_identity": {
+    "dataset_hash_scope": "features_labels_and_eval_mask",
+    "dataset_sha256": "d534cb4e12c1f320638877c040e6c931b3459b947ee21e0219614fdaf4663f9b",
+    "input_dim": "16",
+    "n_classes": "7",
+    "n_samples": "13611"
+  },
+  "duplicate_rows": 0,
+  "fmvmm_commit": "8b0570822a2d774221ca35e01b619d3b6b08ee54",
+  "missing_tasks": [],
+  "n_expected": 140,
+  "n_rows": 140,
+  "non_ok_rows": 0,
+  "slurm_accounts": [
+    "rptu-scale-het"
+  ],
+  "slurm_partitions": [
+    "epyc-256"
+  ],
+  "source_tree_sha256": "fff93aed975b4ff74b1588b9250ea20e98d1317f6e370fb7334a6f2b5ec6ba69",
+  "unexpected_tasks": []
+}

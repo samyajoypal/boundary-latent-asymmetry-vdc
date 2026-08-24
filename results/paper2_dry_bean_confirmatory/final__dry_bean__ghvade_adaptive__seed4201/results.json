@@ -1,0 +1,2187 @@
+[
+  {
+    "acc": 0.7174344280361472,
+    "active_components": 7,
+    "ari": 0.5577879281222146,
+    "candidate_fit_and_score_seconds": 24329.020538800047,
+    "contamination": 0.0,
+    "contamination_mode": "uniform",
+    "corruption_severity": 0.5,
+    "cpu_process_seconds": 95709.48493007399,
+    "dataset": "dry_bean",
+    "dataset_doi": "10.24432/C50S4B",
+    "dataset_hash_scope": "features_labels_and_eval_mask",
+    "dataset_license": "CC BY 4.0",
+    "dataset_sha256": "d534cb4e12c1f320638877c040e6c931b3459b947ee21e0219614fdaf4663f9b",
+    "dataset_source": "uci_ml_repository_602_dry_bean",
+    "dataset_url": "https://archive.ics.uci.edu/dataset/602/dry+bean+dataset",
+    "device": "cpu",
+    "evaluation_seconds": 0.24355153396027163,
+    "external_metrics_blinded": false,
+    "final_cluster_mi": 1.2737028245315996,
+    "final_elbo": -18.091554153797237,
+    "final_loss": 18.091554153797237,
+    "final_prior_regularity": {
+      "maximum_covariance_condition": 10.804233497519341,
+      "minimum_covariance_eigenvalue": 0.07162133604288101,
+      "minimum_positive_interior_shape": null,
+      "regular": true,
+      "violations": []
+    },
+    "fit_diagnostics": {
+      "active_prior_family": "gaussian",
+      "best_candidate": "skew_normal",
+      "best_mean_log_score": -5.085241794586182,
+      "best_standard_error": 0.028109321370720863,
+      "candidate_prior_score": -5.087700366973877,
+      "candidates": [
+        {
+          "candidate": "gaussian",
+          "complexity_rank": 0,
+          "fit_and_score_seconds": 601.2620069310069,
+          "fit_diagnostics": {
+            "best_bic": 476696.2605825169,
+            "best_idx": 0,
+            "best_mixture": [
+              "fmvmm.distributions.multivariate_norm",
+              "fmvmm.distributions.multivariate_norm",
+              "fmvmm.distributions.multivariate_norm",
+              "fmvmm.distributions.multivariate_norm",
+              "fmvmm.distributions.multivariate_norm",
+              "fmvmm.distributions.multivariate_norm",
+              "fmvmm.distributions.multivariate_norm"
+            ],
+            "differentiable": true,
+            "failed_attempts": [
+              {
+                "attempt": "primary",
+                "error": "no_worked_distribution",
+                "initialization": "gmm"
+              }
+            ],
+            "fallback_winsor_quantile": 0.0,
+            "fit_attempt": "alternate_initialization",
+            "fit_seconds": 601.1962716060225,
+            "initialization": "kmeans",
+            "n_failed": 0,
+            "n_worked": 1,
+            "standardized": true
+          },
+          "selection_mean_log_score": -5.105010509490967,
+          "selection_standard_error": 0.02844494767487049,
+          "status": "ok"
+        },
+        {
+          "candidate": "student_t",
+          "complexity_rank": 1,
+          "fit_and_score_seconds": 641.8420395629946,
+          "fit_diagnostics": {
+            "best_bic": 476447.5890709983,
+            "best_idx": 0,
+            "best_mixture": [
+              "fmvmm.distributions.multivariate_t",
+              "fmvmm.distributions.multivariate_t",
+              "fmvmm.distributions.multivariate_t",
+              "fmvmm.distributions.multivariate_t",
+              "fmvmm.distributions.multivariate_t",
+              "fmvmm.distributions.multivariate_t",
+              "fmvmm.distributions.multivariate_t"
+            ],
+            "differentiable": true,
+            "failed_attempts": [
+              {
+                "attempt": "primary",
+                "error": "no_worked_distribution",
+                "initialization": "gmm"
+              }
+            ],
+            "fallback_winsor_quantile": 0.0,
+            "fit_attempt": "alternate_initialization",
+            "fit_seconds": 641.695698098978,
+            "initialization": "kmeans",
+            "n_failed": 0,
+            "n_worked": 1,
+            "standardized": true
+          },
+          "selection_mean_log_score": -5.100036144256592,
+          "selection_standard_error": 0.02764013223350048,
+          "status": "ok"
+        },
+        {
+          "candidate": "skew_normal",
+          "complexity_rank": 2,
+          "fit_and_score_seconds": 870.5298781190068,
+          "fit_diagnostics": {
+            "best_bic": 474373.5417402231,
+            "best_idx": 0,
+            "best_mixture": [
+              "fmvmm.distributions.multivariate_skewnorm",
+              "fmvmm.distributions.multivariate_skewnorm",
+              "fmvmm.distributions.multivariate_skewnorm",
+              "fmvmm.distributions.multivariate_skewnorm",
+              "fmvmm.distributions.multivariate_skewnorm",
+              "fmvmm.distributions.multivariate_skewnorm",
+              "fmvmm.distributions.multivariate_skewnorm"
+            ],
+            "differentiable": true,
+            "failed_attempts": [
+              {
+                "attempt": "primary",
+                "error": "no_worked_distribution",
+                "initialization": "gmm"
+              }
+            ],
+            "fallback_winsor_quantile": 0.0,
+            "fit_attempt": "alternate_initialization",
+            "fit_seconds": 870.4387678580242,
+            "initialization": "kmeans",
+            "n_failed": 0,
+            "n_worked": 1,
+            "standardized": true
+          },
+          "selected": true,
+          "selection_mean_log_score": -5.085241794586182,
+          "selection_standard_error": 0.028109321370720863,
+          "status": "ok"
+        },
+        {
+          "candidate": "variance_gamma",
+          "complexity_rank": 3,
+          "fit_and_score_seconds": 670.8601395380101,
+          "fit_diagnostics": {
+            "best_bic": 495704.61357402196,
+            "best_idx": 0,
+            "best_mixture": [
+              "fmvmm.distributions.multivariate_vargamma",
+              "fmvmm.distributions.multivariate_vargamma",
+              "fmvmm.distributions.multivariate_vargamma",
+              "fmvmm.distributions.multivariate_vargamma",
+              "fmvmm.distributions.multivariate_vargamma",
+              "fmvmm.distributions.multivariate_vargamma",
+              "fmvmm.distributions.multivariate_vargamma"
+            ],
+            "differentiable": true,
+            "failed_attempts": [
+              {
+                "attempt": "primary",
+                "error": "no_worked_distribution",
+                "initialization": "gmm"
+              }
+            ],
+            "fallback_winsor_quantile": 0.0,
+            "fit_attempt": "alternate_initialization",
+            "fit_seconds": 670.6797353400034,
+            "initialization": "kmeans",
+            "n_failed": 0,
+            "n_worked": 1,
+            "standardized": true
+          },
+          "selection_mean_log_score": -5.271438121795654,
+          "selection_standard_error": 0.02771584317088127,
+          "status": "ok"
+        },
+        {
+          "candidate": "hyperbolic",
+          "complexity_rank": 4,
+          "fit_and_score_seconds": 640.6136621310143,
+          "fit_diagnostics": {
+            "best_bic": 477372.3261082404,
+            "best_idx": 0,
+            "best_mixture": [
+              "fmvmm.distributions.multivariate_hyperbolic",
+              "fmvmm.distributions.multivariate_hyperbolic",
+              "fmvmm.distributions.multivariate_hyperbolic",
+              "fmvmm.distributions.multivariate_hyperbolic",
+              "fmvmm.distributions.multivariate_hyperbolic",
+              "fmvmm.distributions.multivariate_hyperbolic",
+              "fmvmm.distributions.multivariate_hyperbolic"
+            ],
+            "differentiable": true,
+            "failed_attempts": [
+              {
+                "attempt": "primary",
+                "error": "no_worked_distribution",
+                "initialization": "gmm"
+              }
+            ],
+            "fallback_winsor_quantile": 0.0,
+            "fit_attempt": "alternate_initialization",
+            "fit_seconds": 640.5457762680016,
+            "initialization": "kmeans",
+            "n_failed": 0,
+            "n_worked": 1,
+            "standardized": true
+          },
+          "selection_mean_log_score": -5.106867790222168,
+          "selection_standard_error": 0.028468284755945206,
+          "status": "ok"
+        },
+        {
+          "candidate": "nig",
+          "complexity_rank": 5,
+          "fit_and_score_seconds": 717.3236133419559,
+          "fit_diagnostics": {
+            "best_bic": 477323.3877275053,
+            "best_idx": 0,
+            "best_mixture": [
+              "fmvmm.distributions.multivariate_norminvgauss",
+              "fmvmm.distributions.multivariate_norminvgauss",
+              "fmvmm.distributions.multivariate_norminvgauss",
+              "fmvmm.distributions.multivariate_norminvgauss",
+              "fmvmm.distributions.multivariate_norminvgauss",
+              "fmvmm.distributions.multivariate_norminvgauss",
+              "fmvmm.distributions.multivariate_norminvgauss"
+            ],
+            "differentiable": true,
+            "failed_attempts": [
+              {
+                "attempt": "primary",
+                "error": "no_worked_distribution",
+                "initialization": "gmm"
+              }
+            ],
+            "fallback_winsor_quantile": 0.0,
+            "fit_attempt": "alternate_initialization",
+            "fit_seconds": 717.2080348760355,
+            "initialization": "kmeans",
+            "n_failed": 0,
+            "n_worked": 1,
+            "standardized": true
+          },
+          "selection_mean_log_score": -5.106302738189697,
+          "selection_standard_error": 0.0283774733543396,
+          "status": "ok"
+        },
+        {
+          "candidate": "skew_t",
+          "complexity_rank": 6,
+          "fit_and_score_seconds": 819.144795582979,
+          "fit_diagnostics": {
+            "best_bic": 477328.5333767558,
+            "best_idx": 0,
+            "best_mixture": [
+              "fmvmm.distributions.multivariate_genskewt",
+              "fmvmm.distributions.multivariate_genskewt",
+              "fmvmm.distributions.multivariate_genskewt",
+              "fmvmm.distributions.multivariate_genskewt",
+              "fmvmm.distributions.multivariate_genskewt",
+              "fmvmm.distributions.multivariate_genskewt",
+              "fmvmm.distributions.multivariate_genskewt"
+            ],
+            "differentiable": true,
+            "failed_attempts": [
+              {
+                "attempt": "primary",
+                "error": "no_worked_distribution",
+                "initialization": "gmm"
+              }
+            ],
+            "fallback_winsor_quantile": 0.0,
+            "fit_attempt": "alternate_initialization",
+            "fit_seconds": 818.8856703169877,
+            "initialization": "kmeans",
+            "n_failed": 0,
+            "n_worked": 1,
+            "standardized": true
+          },
+          "selection_mean_log_score": -5.105978012084961,
+          "selection_standard_error": 0.028285332024097443,
+          "status": "ok"
+        },
+        {
+          "candidate": "full_gh",
+          "complexity_rank": 7,
+          "fit_and_score_seconds": 778.7237308769836,
+          "fit_diagnostics": {
+            "best_bic": 477594.1626151923,
+            "best_idx": 0,
+            "best_mixture": [
+              "fmvmm.distributions.multivariate_genhyperbolic",
+              "fmvmm.distributions.multivariate_genhyperbolic",
+              "fmvmm.distributions.multivariate_genhyperbolic",
+              "fmvmm.distributions.multivariate_genhyperbolic",
+              "fmvmm.distributions.multivariate_genhyperbolic",
+              "fmvmm.distributions.multivariate_genhyperbolic",
+              "fmvmm.distributions.multivariate_genhyperbolic"
+            ],
+            "differentiable": true,
+            "failed_attempts": [
+              {
+                "attempt": "primary",
+                "error": "no_worked_distribution",
+                "initialization": "gmm"
+              }
+            ],
+            "fallback_winsor_quantile": 0.0,
+            "fit_attempt": "alternate_initialization",
+            "fit_seconds": 778.5149044849677,
+            "initialization": "kmeans",
+            "n_failed": 0,
+            "n_worked": 1,
+            "standardized": true
+          },
+          "selection_mean_log_score": -5.107807159423828,
+          "selection_standard_error": 0.02845119498670101,
+          "status": "ok"
+        }
+      ],
+      "current_prior_score": -5.0848164558410645,
+      "cycle": 2,
+      "n_candidates": 8,
+      "n_successful_candidates": 8,
+      "one_se_selected_candidate": "gaussian",
+      "one_se_threshold": -5.1133511159569025,
+      "prior_acceptance_tolerance": 1e-06,
+      "prior_score_change": -0.0028839111328125,
+      "prior_update_accepted": false,
+      "score_unit": "observation_mean_over_mc_draws",
+      "selected_candidate": "skew_normal",
+      "selection_rule": "shape_gated",
+      "shape_gate_abs_skew": 0.716338038444519,
+      "shape_gate_asymmetric_margin": 0.014794349670410156,
+      "shape_gate_best_asymmetric_candidate": "skew_normal",
+      "shape_gate_best_symmetric_candidate": "student_t",
+      "shape_gate_student_t_boundary_diagnostics": {
+        "alignment_candidate_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "anchor_margin_boundary_max": 0.3373565077781677,
+        "anchor_margin_changed_mean": 0.3636012077331543,
+        "anchor_margin_interior_min": 0.33791583776474,
+        "anchor_margin_unchanged_mean": 2.177312135696411,
+        "boundary_count": 545,
+        "boundary_decision_change_rate": 0.2899082601070404,
+        "boundary_disagreement_concentration": 3.8494159518539424,
+        "boundary_disagreement_share": 0.7707316875457764,
+        "boundary_fraction": 0.2002204261572373,
+        "decision_change_count": 205,
+        "decision_change_fraction": 0.07531227171421051,
+        "interior_decision_change_rate": 0.02158934250473976,
+        "margin_deciles": [
+          {
+            "anchor_margin_maximum": 0.16756027936935425,
+            "anchor_margin_mean": 0.08558103442192078,
+            "anchor_margin_minimum": 0.0011399388313293457,
+            "decision_change_rate": 0.38461539149284363,
+            "margin_decile": 1,
+            "n_observations": 273
+          },
+          {
+            "anchor_margin_maximum": 0.33791583776474,
+            "anchor_margin_mean": 0.2519555985927582,
+            "anchor_margin_minimum": 0.16912949085235596,
+            "decision_change_rate": 0.19413919746875763,
+            "margin_decile": 2,
+            "n_observations": 273
+          },
+          {
+            "anchor_margin_maximum": 0.5190792679786682,
+            "anchor_margin_mean": 0.4227473735809326,
+            "anchor_margin_minimum": 0.33843111991882324,
+            "decision_change_rate": 0.08455882221460342,
+            "margin_decile": 3,
+            "n_observations": 272
+          },
+          {
+            "anchor_margin_maximum": 0.7104407548904419,
+            "anchor_margin_mean": 0.6106756329536438,
+            "anchor_margin_minimum": 0.5205661058425903,
+            "decision_change_rate": 0.040441177785396576,
+            "margin_decile": 4,
+            "n_observations": 272
+          },
+          {
+            "anchor_margin_maximum": 1.015533685684204,
+            "anchor_margin_mean": 0.8594712615013123,
+            "anchor_margin_minimum": 0.7118806838989258,
+            "decision_change_rate": 0.022058824077248573,
+            "margin_decile": 5,
+            "n_observations": 272
+          },
+          {
+            "anchor_margin_maximum": 1.3918230533599854,
+            "anchor_margin_mean": 1.196302890777588,
+            "anchor_margin_minimum": 1.017697811126709,
+            "decision_change_rate": 0.011029412038624287,
+            "margin_decile": 6,
+            "n_observations": 272
+          },
+          {
+            "anchor_margin_maximum": 2.152780055999756,
+            "anchor_margin_mean": 1.7274550199508667,
+            "anchor_margin_minimum": 1.3920456171035767,
+            "decision_change_rate": 0.0,
+            "margin_decile": 7,
+            "n_observations": 272
+          },
+          {
+            "anchor_margin_maximum": 3.2037816047668457,
+            "anchor_margin_mean": 2.649139404296875,
+            "anchor_margin_minimum": 2.153532028198242,
+            "decision_change_rate": 0.0036764706019312143,
+            "margin_decile": 8,
+            "n_observations": 272
+          },
+          {
+            "anchor_margin_maximum": 5.651268005371094,
+            "anchor_margin_mean": 4.22955846786499,
+            "anchor_margin_minimum": 3.22139573097229,
+            "decision_change_rate": 0.0036764706019312143,
+            "margin_decile": 9,
+            "n_observations": 272
+          },
+          {
+            "anchor_margin_maximum": 23.801923751831055,
+            "anchor_margin_mean": 8.388051986694336,
+            "anchor_margin_minimum": 5.661558628082275,
+            "decision_change_rate": 0.007352941203862429,
+            "margin_decile": 10,
+            "n_observations": 272
+          }
+        ],
+        "n_observations": 2722,
+        "status": "ok"
+      },
+      "shape_gate_student_t_score_margin": 0.014794349670410156,
+      "shape_gate_triggered": true,
+      "shape_score_margin": 0.01,
+      "shape_skew_threshold": 0.25
+    },
+    "gpu_peak_memory_mb": 0.0,
+    "graph_hard_assortativity": 0.9337498559638934,
+    "graph_hard_edge_agreement": 0.9529757531227039,
+    "graph_hard_null_agreement": 0.290201590329106,
+    "graph_n_neighbors": 10,
+    "graph_n_observations": 2722,
+    "graph_soft_assortativity": 0.7502430592068455,
+    "graph_soft_edge_agreement": 0.8197569600334959,
+    "graph_soft_null_agreement": 0.27832620229049365,
+    "input_dim": 16,
+    "latent_dim": 4,
+    "latent_mean_anchor_training_coordinate_mse": 0.2834967076778412,
+    "latent_mean_anchor_training_max_l2": 6.675492763519287,
+    "latent_mean_anchor_training_mean_l2": 0.9109420776367188,
+    "latent_mean_anchor_training_rms_l2": 1.064888177562022,
+    "latent_mean_anchor_validation_coordinate_mse": 0.26993900537490845,
+    "latent_mean_anchor_validation_max_l2": 7.178474426269531,
+    "latent_mean_anchor_validation_mean_l2": 0.9005569219589233,
+    "latent_mean_anchor_weight": 0.0,
+    "method": "ghvade_adaptive",
+    "method_internal_seconds": 24402.69943450304,
+    "mixture_pretrain_recon_loss": 0.010765658905774982,
+    "n_assigned": 7,
+    "n_classes": 7,
+    "n_eval_samples": 13611,
+    "n_failed_candidate_fits": 1,
+    "n_outliers": 0,
+    "n_prior_updates": 4,
+    "n_rejected_prior_updates": 2,
+    "n_samples": 13611,
+    "neural_training_seconds": 53.3486971759703,
+    "nmi": 0.7103761663416329,
+    "peak_rss_mb": 886.15234375,
+    "posterior_anchor_max_validation_kl": null,
+    "posterior_anchor_training_kl": 5.374322891235352,
+    "posterior_anchor_training_logvar_mean_absolute_drift": 2.7507364749908447,
+    "posterior_anchor_validation_kl": 5.317232131958008,
+    "posterior_anchor_validation_logvar_mean_absolute_drift": 2.748765707015991,
+    "posterior_anchor_weight": 0.0,
+    "pretrain_seconds": 19.246378768002614,
+    "prior_name": "affine_fmvmm_mvn_mvn_mvn_mvn_mvn_mvn_mvn",
+    "prior_update_history": [
+      {
+        "active_prior_family": "skew_normal",
+        "best_candidate": "skew_normal",
+        "best_mean_log_score": -5.271684169769287,
+        "best_standard_error": 0.03885868564248085,
+        "candidate_prior_score": -5.263668537139893,
+        "candidates": [
+          {
+            "candidate": "gaussian",
+            "complexity_rank": 0,
+            "fit_and_score_seconds": 602.1694728930015,
+            "fit_diagnostics": {
+              "best_bic": 455201.44714226195,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 602.1284305709996,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.3263421058654785,
+            "selection_standard_error": 0.03896314650774002,
+            "status": "ok"
+          },
+          {
+            "candidate": "student_t",
+            "complexity_rank": 1,
+            "fit_and_score_seconds": 654.2819325309829,
+            "fit_diagnostics": {
+              "best_bic": 452947.8876319163,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 654.1977208190365,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.3128509521484375,
+            "selection_standard_error": 0.03791293501853943,
+            "status": "ok"
+          },
+          {
+            "candidate": "skew_normal",
+            "complexity_rank": 2,
+            "fit_and_score_seconds": 981.0265286720241,
+            "fit_diagnostics": {
+              "best_bic": 448449.5890032886,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 980.98450688296,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selected": true,
+            "selection_mean_log_score": -5.271684169769287,
+            "selection_standard_error": 0.03885868564248085,
+            "status": "ok"
+          },
+          {
+            "candidate": "variance_gamma",
+            "complexity_rank": 3,
+            "fit_and_score_seconds": 664.019309425028,
+            "fit_diagnostics": {
+              "best_bic": 474875.5670966282,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 663.822640798986,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.5071868896484375,
+            "selection_standard_error": 0.03905147686600685,
+            "status": "ok"
+          },
+          {
+            "candidate": "hyperbolic",
+            "complexity_rank": 4,
+            "fit_and_score_seconds": 640.9532723600278,
+            "fit_diagnostics": {
+              "best_bic": 455609.6887463068,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 640.8850907760207,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.329577445983887,
+            "selection_standard_error": 0.039181601256132126,
+            "status": "ok"
+          },
+          {
+            "candidate": "nig",
+            "complexity_rank": 5,
+            "fit_and_score_seconds": 713.8596010679612,
+            "fit_diagnostics": {
+              "best_bic": 455671.56692528905,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 713.7177557029645,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.329643249511719,
+            "selection_standard_error": 0.039031047374010086,
+            "status": "ok"
+          },
+          {
+            "candidate": "skew_t",
+            "complexity_rank": 6,
+            "fit_and_score_seconds": 830.7083553620032,
+            "fit_diagnostics": {
+              "best_bic": 455658.2482932304,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 830.4712304369896,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.328397750854492,
+            "selection_standard_error": 0.038612000644207,
+            "status": "ok"
+          },
+          {
+            "candidate": "full_gh",
+            "complexity_rank": 7,
+            "fit_and_score_seconds": 838.3598584120045,
+            "fit_diagnostics": {
+              "best_bic": 455743.76734845515,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 838.1440559289767,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.328586101531982,
+            "selection_standard_error": 0.03861589357256889,
+            "status": "ok"
+          }
+        ],
+        "current_prior_score": null,
+        "cycle": -1,
+        "n_candidates": 8,
+        "n_successful_candidates": 8,
+        "one_se_selected_candidate": "skew_normal",
+        "one_se_threshold": -5.310542855411768,
+        "prior_acceptance_tolerance": 1e-06,
+        "prior_score_change": null,
+        "prior_update_accepted": true,
+        "score_unit": "observation_mean_over_mc_draws",
+        "selected_candidate": "skew_normal",
+        "selection_rule": "shape_gated",
+        "shape_gate_abs_skew": 0.7151578068733215,
+        "shape_gate_asymmetric_margin": 0.04116678237915039,
+        "shape_gate_best_asymmetric_candidate": "skew_normal",
+        "shape_gate_best_symmetric_candidate": "student_t",
+        "shape_gate_student_t_boundary_diagnostics": {
+          "alignment_candidate_columns": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "anchor_margin_boundary_max": 1.9346283674240112,
+          "anchor_margin_changed_mean": 1.2390047311782837,
+          "anchor_margin_interior_min": 1.935707688331604,
+          "anchor_margin_unchanged_mean": 4.203372478485107,
+          "boundary_count": 545,
+          "boundary_decision_change_rate": 0.15963302552700043,
+          "boundary_disagreement_concentration": 4.023343584678284,
+          "boundary_disagreement_share": 0.8055555820465088,
+          "boundary_fraction": 0.2002204261572373,
+          "decision_change_count": 108,
+          "decision_change_fraction": 0.03967670723795891,
+          "interior_decision_change_rate": 0.009646302089095116,
+          "margin_deciles": [
+            {
+              "anchor_margin_maximum": 1.0523388385772705,
+              "anchor_margin_mean": 0.5538207292556763,
+              "anchor_margin_minimum": 0.00013375282287597656,
+              "decision_change_rate": 0.25641027092933655,
+              "margin_decile": 1,
+              "n_observations": 273
+            },
+            {
+              "anchor_margin_maximum": 1.935707688331604,
+              "anchor_margin_mean": 1.4956865310668945,
+              "anchor_margin_minimum": 1.0531651973724365,
+              "decision_change_rate": 0.06227106228470802,
+              "margin_decile": 2,
+              "n_observations": 273
+            },
+            {
+              "anchor_margin_maximum": 2.7585620880126953,
+              "anchor_margin_mean": 2.349140167236328,
+              "anchor_margin_minimum": 1.9387892484664917,
+              "decision_change_rate": 0.018382353708148003,
+              "margin_decile": 3,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 3.4416348934173584,
+              "anchor_margin_mean": 3.1189095973968506,
+              "anchor_margin_minimum": 2.7625253200531006,
+              "decision_change_rate": 0.022058824077248573,
+              "margin_decile": 4,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 3.9720921516418457,
+              "anchor_margin_mean": 3.7118330001831055,
+              "anchor_margin_minimum": 3.44514799118042,
+              "decision_change_rate": 0.007352941203862429,
+              "margin_decile": 5,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 4.502405166625977,
+              "anchor_margin_mean": 4.242720603942871,
+              "anchor_margin_minimum": 3.9730772972106934,
+              "decision_change_rate": 0.011029412038624287,
+              "margin_decile": 6,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 5.035477638244629,
+              "anchor_margin_mean": 4.761129379272461,
+              "anchor_margin_minimum": 4.504465103149414,
+              "decision_change_rate": 0.0,
+              "margin_decile": 7,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 5.826392650604248,
+              "anchor_margin_mean": 5.368807792663574,
+              "anchor_margin_minimum": 5.041309833526611,
+              "decision_change_rate": 0.007352941203862429,
+              "margin_decile": 8,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 7.354869365692139,
+              "anchor_margin_mean": 6.550436973571777,
+              "anchor_margin_minimum": 5.827722072601318,
+              "decision_change_rate": 0.011029412038624287,
+              "margin_decile": 9,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 11.834437370300293,
+              "anchor_margin_mean": 8.727577209472656,
+              "anchor_margin_minimum": 7.36092472076416,
+              "decision_change_rate": 0.0,
+              "margin_decile": 10,
+              "n_observations": 272
+            }
+          ],
+          "n_observations": 2722,
+          "status": "ok"
+        },
+        "shape_gate_student_t_score_margin": 0.04116678237915039,
+        "shape_gate_triggered": true,
+        "shape_score_margin": 0.01,
+        "shape_skew_threshold": 0.25
+      },
+      {
+        "active_prior_family": "gaussian",
+        "best_candidate": "skew_normal",
+        "best_mean_log_score": -5.019128322601318,
+        "best_standard_error": 0.027507858350872993,
+        "candidate_prior_score": -5.03377103805542,
+        "candidates": [
+          {
+            "candidate": "gaussian",
+            "complexity_rank": 0,
+            "fit_and_score_seconds": 601.30155552004,
+            "fit_diagnostics": {
+              "best_bic": 465405.43191617425,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 601.2340918880072,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selected": true,
+            "selection_mean_log_score": -5.025181770324707,
+            "selection_standard_error": 0.027492037042975426,
+            "status": "ok"
+          },
+          {
+            "candidate": "student_t",
+            "complexity_rank": 1,
+            "fit_and_score_seconds": 648.6206479090033,
+            "fit_diagnostics": {
+              "best_bic": 467459.49248594773,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 648.5371179530048,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.036157131195068,
+            "selection_standard_error": 0.027611717581748962,
+            "status": "ok"
+          },
+          {
+            "candidate": "skew_normal",
+            "complexity_rank": 2,
+            "fit_and_score_seconds": 1049.392510190024,
+            "fit_diagnostics": {
+              "best_bic": 464836.8905015746,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 1049.3159560239874,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.019128322601318,
+            "selection_standard_error": 0.027507858350872993,
+            "status": "ok"
+          },
+          {
+            "candidate": "variance_gamma",
+            "complexity_rank": 3,
+            "fit_and_score_seconds": 650.4603526929859,
+            "fit_diagnostics": {
+              "best_bic": 489674.16795101407,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 650.2662368220044,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.237002372741699,
+            "selection_standard_error": 0.027827873826026917,
+            "status": "ok"
+          },
+          {
+            "candidate": "hyperbolic",
+            "complexity_rank": 4,
+            "fit_and_score_seconds": 651.6659420159995,
+            "fit_diagnostics": {
+              "best_bic": 465823.358999047,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 651.5833323739935,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.024600505828857,
+            "selection_standard_error": 0.02720434032380581,
+            "status": "ok"
+          },
+          {
+            "candidate": "nig",
+            "complexity_rank": 5,
+            "fit_and_score_seconds": 742.5873671400477,
+            "fit_diagnostics": {
+              "best_bic": 465806.78124180174,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 742.37866011,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.0245442390441895,
+            "selection_standard_error": 0.027207965031266212,
+            "status": "ok"
+          },
+          {
+            "candidate": "skew_t",
+            "complexity_rank": 6,
+            "error": "RuntimeError(\"FMVMM did not fit any candidate mixture: [{'attempt': 'primary', 'initialization': 'gmm', 'error': 'no_worked_distribution'}, {'attempt': 'alternate_initialization', 'initialization': 'kmeans', 'error': 'no_worked_distribution'}, {'attempt': 'winsorized_primary', 'initialization': 'gmm', 'error': 'no_worked_distribution'}, {'attempt': 'winsorized_alternate', 'initialization': 'kmeans', 'error': 'no_worked_distribution'}]\")",
+            "fit_and_score_seconds": 1688.897111747996,
+            "status": "failed"
+          },
+          {
+            "candidate": "full_gh",
+            "complexity_rank": 7,
+            "fit_and_score_seconds": 881.591059495986,
+            "fit_diagnostics": {
+              "best_bic": 465926.07407147635,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 881.3402859719936,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.024624824523926,
+            "selection_standard_error": 0.027155177667737007,
+            "status": "ok"
+          }
+        ],
+        "current_prior_score": -5.168761253356934,
+        "cycle": 0,
+        "n_candidates": 8,
+        "n_successful_candidates": 7,
+        "one_se_selected_candidate": "gaussian",
+        "one_se_threshold": -5.046636180952191,
+        "prior_acceptance_tolerance": 1e-06,
+        "prior_score_change": 0.13499021530151367,
+        "prior_update_accepted": true,
+        "score_unit": "observation_mean_over_mc_draws",
+        "selected_candidate": "gaussian",
+        "selection_rule": "shape_gated",
+        "shape_gate_abs_skew": 0.6880298852920532,
+        "shape_gate_asymmetric_margin": 0.006053447723388672,
+        "shape_gate_best_asymmetric_candidate": "skew_normal",
+        "shape_gate_best_symmetric_candidate": "gaussian",
+        "shape_gate_student_t_boundary_diagnostics": {
+          "alignment_candidate_columns": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "anchor_margin_boundary_max": 1.3317489624023438,
+          "anchor_margin_changed_mean": 1.1057202816009521,
+          "anchor_margin_interior_min": 1.332271695137024,
+          "anchor_margin_unchanged_mean": 3.913999557495117,
+          "boundary_count": 545,
+          "boundary_decision_change_rate": 0.24220183491706848,
+          "boundary_disagreement_concentration": 3.7247084079433486,
+          "boundary_disagreement_share": 0.7457627058029175,
+          "boundary_fraction": 0.2002204261572373,
+          "decision_change_count": 177,
+          "decision_change_fraction": 0.06502571702003479,
+          "interior_decision_change_rate": 0.02067064680159092,
+          "margin_deciles": [
+            {
+              "anchor_margin_maximum": 0.6565669775009155,
+              "anchor_margin_mean": 0.32488417625427246,
+              "anchor_margin_minimum": 0.0062296390533447266,
+              "decision_change_rate": 0.3186813294887543,
+              "margin_decile": 1,
+              "n_observations": 273
+            },
+            {
+              "anchor_margin_maximum": 1.332271695137024,
+              "anchor_margin_mean": 1.0115370750427246,
+              "anchor_margin_minimum": 0.6684157252311707,
+              "decision_change_rate": 0.1684981733560562,
+              "margin_decile": 2,
+              "n_observations": 273
+            },
+            {
+              "anchor_margin_maximum": 1.9265923500061035,
+              "anchor_margin_mean": 1.6202659606933594,
+              "anchor_margin_minimum": 1.3440940380096436,
+              "decision_change_rate": 0.05882352963089943,
+              "margin_decile": 3,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 2.6548547744750977,
+              "anchor_margin_mean": 2.2917258739471436,
+              "anchor_margin_minimum": 1.9284716844558716,
+              "decision_change_rate": 0.05147058889269829,
+              "margin_decile": 4,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 3.5124166011810303,
+              "anchor_margin_mean": 3.066002368927002,
+              "anchor_margin_minimum": 2.658273696899414,
+              "decision_change_rate": 0.011029412038624287,
+              "margin_decile": 5,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 4.36906623840332,
+              "anchor_margin_mean": 3.9637629985809326,
+              "anchor_margin_minimum": 3.5267515182495117,
+              "decision_change_rate": 0.011029412038624287,
+              "margin_decile": 6,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 5.212765693664551,
+              "anchor_margin_mean": 4.802648067474365,
+              "anchor_margin_minimum": 4.370745658874512,
+              "decision_change_rate": 0.007352941203862429,
+              "margin_decile": 7,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 6.104706287384033,
+              "anchor_margin_mean": 5.631856441497803,
+              "anchor_margin_minimum": 5.21800422668457,
+              "decision_change_rate": 0.018382353708148003,
+              "margin_decile": 8,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 7.067123889923096,
+              "anchor_margin_mean": 6.554858207702637,
+              "anchor_margin_minimum": 6.104909420013428,
+              "decision_change_rate": 0.0036764706019312143,
+              "margin_decile": 9,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 11.56603717803955,
+              "anchor_margin_mean": 8.068872451782227,
+              "anchor_margin_minimum": 7.06760311126709,
+              "decision_change_rate": 0.0,
+              "margin_decile": 10,
+              "n_observations": 272
+            }
+          ],
+          "n_observations": 2722,
+          "status": "ok"
+        },
+        "shape_gate_student_t_score_margin": 0.01702880859375,
+        "shape_gate_triggered": false,
+        "shape_score_margin": 0.01,
+        "shape_skew_threshold": 0.25
+      },
+      {
+        "active_prior_family": "gaussian",
+        "best_candidate": "skew_normal",
+        "best_mean_log_score": -5.100481033325195,
+        "best_standard_error": 0.0268095675855875,
+        "candidate_prior_score": -5.103030204772949,
+        "candidates": [
+          {
+            "candidate": "gaussian",
+            "complexity_rank": 0,
+            "fit_and_score_seconds": 601.1714639869751,
+            "fit_diagnostics": {
+              "best_bic": 477877.5974136794,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 601.1677904209937,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.130626678466797,
+            "selection_standard_error": 0.027246229350566864,
+            "status": "ok"
+          },
+          {
+            "candidate": "student_t",
+            "complexity_rank": 1,
+            "fit_and_score_seconds": 645.513258202991,
+            "fit_diagnostics": {
+              "best_bic": 477588.95603499503,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 645.4478389539872,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.120407581329346,
+            "selection_standard_error": 0.0265525933355093,
+            "status": "ok"
+          },
+          {
+            "candidate": "skew_normal",
+            "complexity_rank": 2,
+            "fit_and_score_seconds": 908.6183765860042,
+            "fit_diagnostics": {
+              "best_bic": 475360.62532682624,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 908.5425052130013,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selected": true,
+            "selection_mean_log_score": -5.100481033325195,
+            "selection_standard_error": 0.0268095675855875,
+            "status": "ok"
+          },
+          {
+            "candidate": "variance_gamma",
+            "complexity_rank": 3,
+            "fit_and_score_seconds": 675.5795961279655,
+            "fit_diagnostics": {
+              "best_bic": 496912.44014663046,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 675.4294315800071,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.2834792137146,
+            "selection_standard_error": 0.02640313282608986,
+            "status": "ok"
+          },
+          {
+            "candidate": "hyperbolic",
+            "complexity_rank": 4,
+            "fit_and_score_seconds": 643.7641637829947,
+            "fit_diagnostics": {
+              "best_bic": 478539.6409249027,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 643.6780157019966,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.1312055587768555,
+            "selection_standard_error": 0.027514595538377762,
+            "status": "ok"
+          },
+          {
+            "candidate": "nig",
+            "complexity_rank": 5,
+            "fit_and_score_seconds": 717.5268548870226,
+            "fit_diagnostics": {
+              "best_bic": 478539.5998840186,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 717.4040605300106,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.131190776824951,
+            "selection_standard_error": 0.027520235627889633,
+            "status": "ok"
+          },
+          {
+            "candidate": "skew_t",
+            "complexity_rank": 6,
+            "fit_and_score_seconds": 776.9521123460145,
+            "fit_diagnostics": {
+              "best_bic": 478600.69318653917,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 776.6996040079976,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.131248474121094,
+            "selection_standard_error": 0.027504103258252144,
+            "status": "ok"
+          },
+          {
+            "candidate": "full_gh",
+            "complexity_rank": 7,
+            "fit_and_score_seconds": 779.6999693610123,
+            "fit_diagnostics": {
+              "best_bic": 478696.33493705816,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 779.4802749060327,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.131350040435791,
+            "selection_standard_error": 0.027490945532917976,
+            "status": "ok"
+          }
+        ],
+        "current_prior_score": -5.102926254272461,
+        "cycle": 1,
+        "n_candidates": 8,
+        "n_successful_candidates": 8,
+        "one_se_selected_candidate": "student_t",
+        "one_se_threshold": -5.127290600910783,
+        "prior_acceptance_tolerance": 1e-06,
+        "prior_score_change": -0.00010395050048828125,
+        "prior_update_accepted": false,
+        "score_unit": "observation_mean_over_mc_draws",
+        "selected_candidate": "skew_normal",
+        "selection_rule": "shape_gated",
+        "shape_gate_abs_skew": 0.710148811340332,
+        "shape_gate_asymmetric_margin": 0.01992654800415039,
+        "shape_gate_best_asymmetric_candidate": "skew_normal",
+        "shape_gate_best_symmetric_candidate": "student_t",
+        "shape_gate_student_t_boundary_diagnostics": {
+          "alignment_candidate_columns": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "anchor_margin_boundary_max": 0.32590657472610474,
+          "anchor_margin_changed_mean": 0.39614662528038025,
+          "anchor_margin_interior_min": 0.32638436555862427,
+          "anchor_margin_unchanged_mean": 2.222057342529297,
+          "boundary_count": 545,
+          "boundary_decision_change_rate": 0.2899082601070404,
+          "boundary_disagreement_concentration": 3.985506625879,
+          "boundary_disagreement_share": 0.7979797720909119,
+          "boundary_fraction": 0.2002204261572373,
+          "decision_change_count": 198,
+          "decision_change_fraction": 0.07274062931537628,
+          "interior_decision_change_rate": 0.01837390847504139,
+          "margin_deciles": [
+            {
+              "anchor_margin_maximum": 0.1643182635307312,
+              "anchor_margin_mean": 0.08075474202632904,
+              "anchor_margin_minimum": 0.0007438063621520996,
+              "decision_change_rate": 0.36263737082481384,
+              "margin_decile": 1,
+              "n_observations": 273
+            },
+            {
+              "anchor_margin_maximum": 0.32638436555862427,
+              "anchor_margin_mean": 0.24200618267059326,
+              "anchor_margin_minimum": 0.16465765237808228,
+              "decision_change_rate": 0.21611721813678741,
+              "margin_decile": 2,
+              "n_observations": 273
+            },
+            {
+              "anchor_margin_maximum": 0.5358861684799194,
+              "anchor_margin_mean": 0.42890307307243347,
+              "anchor_margin_minimum": 0.32738369703292847,
+              "decision_change_rate": 0.06617647409439087,
+              "margin_decile": 3,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 0.7596261501312256,
+              "anchor_margin_mean": 0.6406161189079285,
+              "anchor_margin_minimum": 0.5366501212120056,
+              "decision_change_rate": 0.0625,
+              "margin_decile": 4,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 1.0578958988189697,
+              "anchor_margin_mean": 0.9074326157569885,
+              "anchor_margin_minimum": 0.7607254981994629,
+              "decision_change_rate": 0.0036764706019312143,
+              "margin_decile": 5,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 1.4583109617233276,
+              "anchor_margin_mean": 1.245690941810608,
+              "anchor_margin_minimum": 1.0587788820266724,
+              "decision_change_rate": 0.0,
+              "margin_decile": 6,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 2.189624786376953,
+              "anchor_margin_mean": 1.823762059211731,
+              "anchor_margin_minimum": 1.4616132974624634,
+              "decision_change_rate": 0.0,
+              "margin_decile": 7,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 3.4042389392852783,
+              "anchor_margin_mean": 2.7812249660491943,
+              "anchor_margin_minimum": 2.189724922180176,
+              "decision_change_rate": 0.0,
+              "margin_decile": 8,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 5.577999591827393,
+              "anchor_margin_mean": 4.265504360198975,
+              "anchor_margin_minimum": 3.4124698638916016,
+              "decision_change_rate": 0.007352941203862429,
+              "margin_decile": 9,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 26.049711227416992,
+              "anchor_margin_mean": 8.490674018859863,
+              "anchor_margin_minimum": 5.593482494354248,
+              "decision_change_rate": 0.007352941203862429,
+              "margin_decile": 10,
+              "n_observations": 272
+            }
+          ],
+          "n_observations": 2722,
+          "status": "ok"
+        },
+        "shape_gate_student_t_score_margin": 0.01992654800415039,
+        "shape_gate_triggered": true,
+        "shape_score_margin": 0.01,
+        "shape_skew_threshold": 0.25
+      },
+      {
+        "active_prior_family": "gaussian",
+        "best_candidate": "skew_normal",
+        "best_mean_log_score": -5.085241794586182,
+        "best_standard_error": 0.028109321370720863,
+        "candidate_prior_score": -5.087700366973877,
+        "candidates": [
+          {
+            "candidate": "gaussian",
+            "complexity_rank": 0,
+            "fit_and_score_seconds": 601.2620069310069,
+            "fit_diagnostics": {
+              "best_bic": 476696.2605825169,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm",
+                "fmvmm.distributions.multivariate_norm"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 601.1962716060225,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.105010509490967,
+            "selection_standard_error": 0.02844494767487049,
+            "status": "ok"
+          },
+          {
+            "candidate": "student_t",
+            "complexity_rank": 1,
+            "fit_and_score_seconds": 641.8420395629946,
+            "fit_diagnostics": {
+              "best_bic": 476447.5890709983,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t",
+                "fmvmm.distributions.multivariate_t"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 641.695698098978,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.100036144256592,
+            "selection_standard_error": 0.02764013223350048,
+            "status": "ok"
+          },
+          {
+            "candidate": "skew_normal",
+            "complexity_rank": 2,
+            "fit_and_score_seconds": 870.5298781190068,
+            "fit_diagnostics": {
+              "best_bic": 474373.5417402231,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm",
+                "fmvmm.distributions.multivariate_skewnorm"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 870.4387678580242,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selected": true,
+            "selection_mean_log_score": -5.085241794586182,
+            "selection_standard_error": 0.028109321370720863,
+            "status": "ok"
+          },
+          {
+            "candidate": "variance_gamma",
+            "complexity_rank": 3,
+            "fit_and_score_seconds": 670.8601395380101,
+            "fit_diagnostics": {
+              "best_bic": 495704.61357402196,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma",
+                "fmvmm.distributions.multivariate_vargamma"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 670.6797353400034,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.271438121795654,
+            "selection_standard_error": 0.02771584317088127,
+            "status": "ok"
+          },
+          {
+            "candidate": "hyperbolic",
+            "complexity_rank": 4,
+            "fit_and_score_seconds": 640.6136621310143,
+            "fit_diagnostics": {
+              "best_bic": 477372.3261082404,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic",
+                "fmvmm.distributions.multivariate_hyperbolic"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 640.5457762680016,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.106867790222168,
+            "selection_standard_error": 0.028468284755945206,
+            "status": "ok"
+          },
+          {
+            "candidate": "nig",
+            "complexity_rank": 5,
+            "fit_and_score_seconds": 717.3236133419559,
+            "fit_diagnostics": {
+              "best_bic": 477323.3877275053,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss",
+                "fmvmm.distributions.multivariate_norminvgauss"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 717.2080348760355,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.106302738189697,
+            "selection_standard_error": 0.0283774733543396,
+            "status": "ok"
+          },
+          {
+            "candidate": "skew_t",
+            "complexity_rank": 6,
+            "fit_and_score_seconds": 819.144795582979,
+            "fit_diagnostics": {
+              "best_bic": 477328.5333767558,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt",
+                "fmvmm.distributions.multivariate_genskewt"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 818.8856703169877,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.105978012084961,
+            "selection_standard_error": 0.028285332024097443,
+            "status": "ok"
+          },
+          {
+            "candidate": "full_gh",
+            "complexity_rank": 7,
+            "fit_and_score_seconds": 778.7237308769836,
+            "fit_diagnostics": {
+              "best_bic": 477594.1626151923,
+              "best_idx": 0,
+              "best_mixture": [
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic",
+                "fmvmm.distributions.multivariate_genhyperbolic"
+              ],
+              "differentiable": true,
+              "failed_attempts": [
+                {
+                  "attempt": "primary",
+                  "error": "no_worked_distribution",
+                  "initialization": "gmm"
+                }
+              ],
+              "fallback_winsor_quantile": 0.0,
+              "fit_attempt": "alternate_initialization",
+              "fit_seconds": 778.5149044849677,
+              "initialization": "kmeans",
+              "n_failed": 0,
+              "n_worked": 1,
+              "standardized": true
+            },
+            "selection_mean_log_score": -5.107807159423828,
+            "selection_standard_error": 0.02845119498670101,
+            "status": "ok"
+          }
+        ],
+        "current_prior_score": -5.0848164558410645,
+        "cycle": 2,
+        "n_candidates": 8,
+        "n_successful_candidates": 8,
+        "one_se_selected_candidate": "gaussian",
+        "one_se_threshold": -5.1133511159569025,
+        "prior_acceptance_tolerance": 1e-06,
+        "prior_score_change": -0.0028839111328125,
+        "prior_update_accepted": false,
+        "score_unit": "observation_mean_over_mc_draws",
+        "selected_candidate": "skew_normal",
+        "selection_rule": "shape_gated",
+        "shape_gate_abs_skew": 0.716338038444519,
+        "shape_gate_asymmetric_margin": 0.014794349670410156,
+        "shape_gate_best_asymmetric_candidate": "skew_normal",
+        "shape_gate_best_symmetric_candidate": "student_t",
+        "shape_gate_student_t_boundary_diagnostics": {
+          "alignment_candidate_columns": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "anchor_margin_boundary_max": 0.3373565077781677,
+          "anchor_margin_changed_mean": 0.3636012077331543,
+          "anchor_margin_interior_min": 0.33791583776474,
+          "anchor_margin_unchanged_mean": 2.177312135696411,
+          "boundary_count": 545,
+          "boundary_decision_change_rate": 0.2899082601070404,
+          "boundary_disagreement_concentration": 3.8494159518539424,
+          "boundary_disagreement_share": 0.7707316875457764,
+          "boundary_fraction": 0.2002204261572373,
+          "decision_change_count": 205,
+          "decision_change_fraction": 0.07531227171421051,
+          "interior_decision_change_rate": 0.02158934250473976,
+          "margin_deciles": [
+            {
+              "anchor_margin_maximum": 0.16756027936935425,
+              "anchor_margin_mean": 0.08558103442192078,
+              "anchor_margin_minimum": 0.0011399388313293457,
+              "decision_change_rate": 0.38461539149284363,
+              "margin_decile": 1,
+              "n_observations": 273
+            },
+            {
+              "anchor_margin_maximum": 0.33791583776474,
+              "anchor_margin_mean": 0.2519555985927582,
+              "anchor_margin_minimum": 0.16912949085235596,
+              "decision_change_rate": 0.19413919746875763,
+              "margin_decile": 2,
+              "n_observations": 273
+            },
+            {
+              "anchor_margin_maximum": 0.5190792679786682,
+              "anchor_margin_mean": 0.4227473735809326,
+              "anchor_margin_minimum": 0.33843111991882324,
+              "decision_change_rate": 0.08455882221460342,
+              "margin_decile": 3,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 0.7104407548904419,
+              "anchor_margin_mean": 0.6106756329536438,
+              "anchor_margin_minimum": 0.5205661058425903,
+              "decision_change_rate": 0.040441177785396576,
+              "margin_decile": 4,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 1.015533685684204,
+              "anchor_margin_mean": 0.8594712615013123,
+              "anchor_margin_minimum": 0.7118806838989258,
+              "decision_change_rate": 0.022058824077248573,
+              "margin_decile": 5,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 1.3918230533599854,
+              "anchor_margin_mean": 1.196302890777588,
+              "anchor_margin_minimum": 1.017697811126709,
+              "decision_change_rate": 0.011029412038624287,
+              "margin_decile": 6,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 2.152780055999756,
+              "anchor_margin_mean": 1.7274550199508667,
+              "anchor_margin_minimum": 1.3920456171035767,
+              "decision_change_rate": 0.0,
+              "margin_decile": 7,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 3.2037816047668457,
+              "anchor_margin_mean": 2.649139404296875,
+              "anchor_margin_minimum": 2.153532028198242,
+              "decision_change_rate": 0.0036764706019312143,
+              "margin_decile": 8,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 5.651268005371094,
+              "anchor_margin_mean": 4.22955846786499,
+              "anchor_margin_minimum": 3.22139573097229,
+              "decision_change_rate": 0.0036764706019312143,
+              "margin_decile": 9,
+              "n_observations": 272
+            },
+            {
+              "anchor_margin_maximum": 23.801923751831055,
+              "anchor_margin_mean": 8.388051986694336,
+              "anchor_margin_minimum": 5.661558628082275,
+              "decision_change_rate": 0.007352941203862429,
+              "margin_decile": 10,
+              "n_observations": 272
+            }
+          ],
+          "n_observations": 2722,
+          "status": "ok"
+        },
+        "shape_gate_student_t_score_margin": 0.014794349670410156,
+        "shape_gate_triggered": true,
+        "shape_score_margin": 0.01,
+        "shape_skew_threshold": 0.25
+      }
+    ],
+    "prior_update_pipeline_seconds": 24329.477373234055,
+    "purity": 0.7281610462126221,
+    "requested_cpu_cores": 4,
+    "runtime_seconds": 24402.737748690008,
+    "seed": 4201,
+    "selected_family": "gaussian",
+    "semantic_outlier_dataset": "",
+    "split_diagnostics": {
+      "n_optimization": 10889,
+      "n_selection": 2722,
+      "optimization_indices_sha256": "d50532313d110969a02ee6087ea2711a62a8f03e54b60aad5f2a7a9a2ec3e687",
+      "selection_fraction": 0.2,
+      "selection_indices_sha256": "81b43f110a55317d31da61f3d5f888c79f045450345b592c7bd69e9b35b2fcd3",
+      "split_seed": 6300
+    },
+    "status": "ok"
+  }
+]
