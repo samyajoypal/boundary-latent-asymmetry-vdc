@@ -21,7 +21,7 @@ study. This absence is retained rather than retrospectively replacing it with
 the later replication hash. The exact resolved settings and all 600 aggregate
 rows are released.
 
-The 140-run Dry Bean descriptive fallback study recorded the following values
+The 140-run Dry Bean real-data study recorded the following values
 in every completed task manifest:
 
 | Object | SHA-256 or revision |
@@ -33,5 +33,5 @@ in every completed task manifest:
 
 The source tree is preserved independently under
 `experiment_snapshots/dry_bean/`. The failed blinded gate and the pre-label
-fallback amendment are retained; the 20-seed external analysis is therefore
+amendment are retained; the 20-seed external analysis is therefore
 descriptive, not relabelled as confirmatory.

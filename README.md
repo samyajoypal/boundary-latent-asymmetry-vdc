@@ -4,9 +4,9 @@ This repository is the reproducibility release for the manuscript
 **Boundary-Relevant Latent Asymmetry in Variational Deep Clustering**.
 
 The current manuscript snapshot is frozen at tag
-`paper2-neurocomputing-r3-2026-08-24`. Its official Elsevier source, compiled
+`paper2-neurocomputing-final-2026-08-25`. Its official Elsevier source, compiled
 article and supplement, and flat upload archive are in `paper/`; the archive is
-`paper/submission_ready_neurocomputing_r3.zip`.
+`paper/submission_ready_neurocomputing_final.zip`.
 
 The paper studies when a flexible latent component changes a clustering
 partition rather than only improving density fit. It reports a 600-run adaptive
@@ -14,7 +14,7 @@ family study, a failed 20-seed NIG orientation confirmation, an independent
 100-seed replication, and a locked 20-seed Dry Bean application with seven
 methods. The replication supports a boundary-orientation effect and a
 boundary-facing NIG advantage. The Dry Bean application is deliberately
-retained as a negative fallback result: adaptive GH-VaDE does not outperform
+retained as a negative real-data result: adaptive GH-VaDE does not outperform
 matched Student-t GH-VaDE, and raw-space Gaussian mixtures perform best. The
 paper does not claim universal GH superiority or formal outward equivalence.
 
@@ -89,7 +89,7 @@ Verify all row counts, frozen hashes, validity counts, and principal estimates:
 .venv/bin/python publication_scripts/verify_release.py
 ```
 
-Reconstruct the retained Dry Bean fallback analysis from the released 140
+Reconstruct the retained Dry Bean real-data analysis from the released 140
 result/manifest pairs and failed blinded-pilot record:
 
 ```bash
@@ -109,8 +109,7 @@ MPLCONFIGDIR=/tmp/ghvade-matplotlib \
 Build the flat Elsevier source package:
 
 ```bash
-.venv/bin/python publication_scripts/build_paper2_submission.py \
-  --output-dir paper/submission_rebuilt_local
+.venv/bin/python publication_scripts/build_paper2_submission.py
 ```
 
 ## Rerun a frozen task

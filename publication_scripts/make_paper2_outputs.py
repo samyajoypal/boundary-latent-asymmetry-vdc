@@ -619,7 +619,7 @@ def _dry_bean_outputs() -> dict[str, object]:
     lines = [
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Dry Bean descriptive fallback study over 20 unseen paired seeds. Values are mean $\pm$ standard deviation. The original label-blinded promotion gate failed; these external metrics are therefore descriptive and are retained regardless of direction.}",
+        r"\caption{Dry Bean real-data study over 20 unseen paired seeds. Values are mean $\pm$ standard deviation. The original label-blinded promotion gate failed; these external metrics are therefore descriptive and are retained regardless of direction.}",
         r"\label{tab:dry-bean-performance}",
         r"\begin{tabular}{lcccc}",
         r"\toprule",
@@ -653,7 +653,7 @@ def _dry_bean_outputs() -> dict[str, object]:
     }
     contrast_lines = [
         r"\begin{longtable}{llrcrr}",
-        r"\caption{Paired adaptive-GH-VaDE differences in the Dry Bean fallback study. Confidence intervals are two-sided 95\% Student-$t$ intervals over 20 seed pairs. Holm adjustment covers all six exploratory tests.}\label{tab:dry-bean-contrasts}\\",
+        r"\caption{Paired adaptive-GH-VaDE differences in the Dry Bean real-data study. Confidence intervals are two-sided 95\% Student-$t$ intervals over 20 seed pairs. Holm adjustment covers all six exploratory tests.}\label{tab:dry-bean-contrasts}\\",
         r"\toprule",
         r"Comparator & Metric & Mean $\Delta$ & 95\% CI & Holm $p$ & Adaptive wins \\",
         r"\midrule",
@@ -691,7 +691,7 @@ def _dry_bean_outputs() -> dict[str, object]:
         ("Blinded pilot", "Initial fit", 5, family_counts(pilot_initial)),
         ("", "Final cycle", 5, family_counts(pilot_final)),
         (
-            "Unseen-seed fallback",
+            "Unseen-seed study",
             "Initial fit",
             20,
             family_counts(stage["initial_active_family"]),
