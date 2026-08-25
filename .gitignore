@@ -4,6 +4,7 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 .mypy_cache/
+generated_artifacts/
 *.aux
 *.abs
 *.bbl
@@ -11,5 +12,3 @@ __pycache__/
 *.log
 *.out
 *.spl
-paper/submission_bundle_rebuilt/
-paper/submission_bundle_rebuilt.zip

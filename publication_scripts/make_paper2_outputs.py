@@ -12,10 +12,9 @@ from scipy import stats
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAPER = ROOT / "paper"
-MANUSCRIPT = PAPER / "manuscript"
-TABLES = MANUSCRIPT / "tables"
-FIGURES = MANUSCRIPT / "figures"
+GENERATED = ROOT / "generated_artifacts" / "paper2"
+TABLES = GENERATED / "tables"
+FIGURES = GENERATED / "figures"
 
 V9 = ROOT / "results" / "shape_dominant"
 REPLICATION = ROOT / "results" / "nig_orientation_replication"
@@ -816,7 +815,7 @@ def main() -> None:
     _latent_geometry_figure()
     dry_bean = _dry_bean_outputs()
     _macros(summaries, replication, dry_bean)
-    print(f"Wrote Paper 2 artifacts to {MANUSCRIPT}")
+    print(f"Wrote Paper 2 artifacts to {GENERATED}")
 
 
 if __name__ == "__main__":

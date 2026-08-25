@@ -1,12 +1,13 @@
 # Boundary-Relevant Latent Asymmetry in Variational Deep Clustering
 
-This repository is the reproducibility release for the manuscript
+This repository is the code-and-data reproducibility release for the manuscript
 **Boundary-Relevant Latent Asymmetry in Variational Deep Clustering**.
 
-The current manuscript snapshot is frozen at tag
-`paper2-neurocomputing-final-2026-08-25`. Its official Elsevier source, compiled
-article and supplement, and flat upload archive are in `paper/`; the archive is
-`paper/submission_ready_neurocomputing_final.zip`.
+The reproducibility snapshot is frozen at tag
+`paper2-reproducibility-2026-08-25`. The repository intentionally excludes the
+article source, compiled article, supplementary manuscript, cover letter,
+journal template, and submission archive. Those editorial files are maintained
+separately by the authors.
 
 The paper studies when a flexible latent component changes a clustering
 partition rather than only improving density fit. It reports a 600-run adaptive
@@ -36,8 +37,7 @@ paper does not claim universal GH superiority or formal outward equivalence.
 - `results/paper2_dry_bean_blind_pilot/`: the failed blinded gate and the five
   adaptive pilot selector histories needed to reconstruct the chronology.
 - `publication_scripts/`: post-experiment analysis, table/figure generation,
-  release verification, and manuscript bundle builder.
-- `paper/`: journal manuscript source, PDFs, and flat submission archive.
+  and release verification.
 - `protocols/`: the prospectively written replication contract.
 
 No class label enters mixture fitting or family selection. Labels are retained
@@ -98,18 +98,13 @@ MPLCONFIGDIR=/tmp/ghvade-matplotlib \
   --analysis-mode descriptive_fallback
 ```
 
-Regenerate every manuscript table, figure, and result macro from the released
-CSV and JSON files:
+Regenerate every reported table, figure, and result macro from the released CSV
+and JSON files. Outputs are written to the ignored local directory
+`generated_artifacts/paper2/`:
 
 ```bash
 MPLCONFIGDIR=/tmp/ghvade-matplotlib \
   .venv/bin/python publication_scripts/make_paper2_outputs.py
-```
-
-Build the flat Elsevier source package:
-
-```bash
-.venv/bin/python publication_scripts/build_paper2_submission.py
 ```
 
 ## Rerun a frozen task
@@ -127,10 +122,10 @@ export FMVMM_PATH=/absolute/path/to/fmvmm
 ```
 
 The full arrays are computational experiments; the bundled aggregates are
-sufficient to reconstruct all reported statistical analyses and manuscript
-artifacts without rerunning neural training.
+sufficient to reconstruct all reported statistical analyses, tables, and
+figures without rerunning neural training.
 
 ## License
 
-Code is released under the MIT License. Manuscript text and published figures
-remain subject to the journal's publication terms.
+Code is released under the MIT License. Third-party datasets remain subject to
+their respective licenses.

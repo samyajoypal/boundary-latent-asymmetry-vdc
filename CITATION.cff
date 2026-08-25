@@ -6,7 +6,10 @@ authors:
     given-names: Samyajoy
     email: samyajoy.pal@rptu.de
     affiliation: "Chair of Data Analytics, Technical University of Kaiserslautern-Landau"
+  - family-names: Haschka
+    given-names: Rouven E.
+    affiliation: "Chair of Data Analytics, Technical University of Kaiserslautern-Landau"
 date-released: 2026-08-25
-version: "paper2-neurocomputing-final-2026-08-25"
+version: "paper2-reproducibility-2026-08-25"
 repository-code: "https://github.com/samyajoypal/boundary-latent-asymmetry-vdc"
 license: MIT
