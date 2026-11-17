@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or these artifacts, please cite the associated manuscript."
-title: "Boundary-Relevant Latent Asymmetry in Variational Deep Clustering"
+title: "Asymmetric Mixture Priors in Variational Deep Clustering: A Theoretical and Empirical Study"
 authors:
   - family-names: Pal
     given-names: Samyajoy
@@ -9,7 +9,7 @@ authors:
   - family-names: Haschka
     given-names: Rouven E.
     affiliation: "Chair of Data Analytics, Technical University of Kaiserslautern-Landau"
-date-released: 2026-08-25
-version: "paper2-reproducibility-2026-08-25"
+date-released: 2026-11-17
+version: "2026.11.17"
 repository-code: "https://github.com/samyajoypal/boundary-latent-asymmetry-vdc"
 license: MIT

@@ -1,0 +1,136 @@
+{
+  "simulation_primary_cells": [
+    "nig_easy",
+    "nig_moderate",
+    "skew_t_easy",
+    "skew_t_moderate",
+    "full_gh_easy",
+    "full_gh_moderate"
+  ],
+  "simulation_seeds": [
+    16400,
+    16401,
+    16402,
+    16403,
+    16404,
+    16405,
+    16406,
+    16407,
+    16408,
+    16409,
+    16410,
+    16411,
+    16412,
+    16413,
+    16414,
+    16415,
+    16416,
+    16417,
+    16418,
+    16419
+  ],
+  "image_seeds": [
+    16200,
+    16201,
+    16202,
+    16203,
+    16204,
+    16205,
+    16206,
+    16207,
+    16208,
+    16209,
+    16210,
+    16211,
+    16212,
+    16213,
+    16214,
+    16215,
+    16216,
+    16217,
+    16218,
+    16219
+  ],
+  "scope": "Numerical reruns, not fresh independent confirmation. Dataset selection followed outcome-informed exploratory evaluation.",
+  "image_features": "Frozen ResNet-50 ImageNet-1K V1 supervised weights; see exact preparation source.",
+  "data_hashes": {
+    "cifar10020_resnet50": {
+      "dataset.npz": "3f9bcbd64d923aac427e5237bee1979bc2236ef9e8470c8bf0036fd9b0c0a0f3",
+      "metadata.json": "6ffc5a1783196c52c5913a51bae697399291a9630972805d3dfd2512dc0463b0"
+    },
+    "cifar10_resnet50": {
+      "dataset.npz": "290f84cb2d4174f69260bb2dc5e77aac5d6d7afeb4e18051fe000d22f7a9e2c5",
+      "metadata.json": "9f5dd2a1cd21ac8d9a62c1cf30660210d98f913310bc6c10158b3c30afa72cea"
+    },
+    "stl10_resnet50": {
+      "dataset.npz": "39a2eacad2b45fa9b4c4b080da600a54660a5bdfae71fb6ffc97c09ac5a99cc1",
+      "metadata.json": "5efcc9d83a7c22268d2b05652b6f81cb9114b35912c2df933786505ef8f27f74"
+    }
+  },
+  "turtle_source": {
+    "vendor/turtle_reference/run_turtle.py": "fd633cebf82f1080f41ae3e891da2833aa2bf3c4ea346340f6b3ec42fde247d6",
+    "vendor/turtle_reference/utils.py": "59116c3b25c7376f821239ae9415c799763a327f3f317b8c95b2b172bd4f93e1"
+  },
+  "calibration": {
+    "nig_easy": {
+      "center": 1.8999999999999997,
+      "latent_bayes_accuracy": 0.9509858507157681,
+      "mc_standard_error": 0.0006396564736591626,
+      "target": 0.95
+    },
+    "nig_moderate": {
+      "center": 0.8999999999999999,
+      "latent_bayes_accuracy": 0.8516862790945355,
+      "mc_standard_error": 0.0010819961008419008,
+      "target": 0.85
+    },
+    "skew_t_easy": {
+      "center": 1.3499999999999996,
+      "latent_bayes_accuracy": 0.9514032320855902,
+      "mc_standard_error": 0.0006869269158423654,
+      "target": 0.95
+    },
+    "skew_t_moderate": {
+      "center": 0.7999999999999998,
+      "latent_bayes_accuracy": 0.8478552301029411,
+      "mc_standard_error": 0.0010605201297538551,
+      "target": 0.85
+    },
+    "full_gh_easy": {
+      "center": 1.7999999999999996,
+      "latent_bayes_accuracy": 0.9486599214804441,
+      "mc_standard_error": 0.0006700193644855759,
+      "target": 0.95
+    },
+    "full_gh_moderate": {
+      "center": 0.9499999999999998,
+      "latent_bayes_accuracy": 0.8509980049194205,
+      "mc_standard_error": 0.00106847754540536,
+      "target": 0.85
+    },
+    "gaussian_control": {
+      "center": 0.7,
+      "latent_bayes_accuracy": 0.8567005422623857,
+      "mc_standard_error": 0.0011269204271728522,
+      "target": 0.85
+    },
+    "student_t_control": {
+      "center": 0.6499999999999999,
+      "latent_bayes_accuracy": 0.842723611819094,
+      "mc_standard_error": 0.0010984138694184987,
+      "target": 0.85
+    },
+    "nig_balanced": {
+      "center": 0.8999999999999999,
+      "target": null,
+      "latent_bayes_accuracy": 0.8497153329882234,
+      "mc_standard_error": 0.0010572975444399749
+    },
+    "nig_outward": {
+      "center": 0.8999999999999999,
+      "target": null,
+      "latent_bayes_accuracy": 0.8854318756116544,
+      "mc_standard_error": 0.0010412806689815222
+    }
+  }
+}

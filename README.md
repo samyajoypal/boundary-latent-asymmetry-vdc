@@ -1,15 +1,68 @@
-# Boundary-Relevant Latent Asymmetry in Variational Deep Clustering
+# Asymmetric Mixture Priors in Variational Deep Clustering: A Theoretical and Empirical Study
 
 This repository is the code-and-data reproducibility release for the manuscript
-**Boundary-Relevant Latent Asymmetry in Variational Deep Clustering**.
+**Asymmetric Mixture Priors in Variational Deep Clustering: A Theoretical and Empirical Study**.
 
-The reproducibility snapshot is frozen at tag
+## Current Revision
+
+**Code release: 17 November 2026.** The current experiments are isolated under
+`current/`; the root-level scientific source is retained for historical releases.
+
+For the corrected 20-seed simulation and the STL-10, CIFAR-10, and CIFAR-100-20
+experiments, use [current/README.md](current/README.md). It contains installation,
+feature preparation, exact-configuration execution, and statistical-reproduction
+instructions. The article and supplementary PDF contain the scientific results;
+neither manuscript is distributed here, and no separate evidence ZIP is required.
+
+### Reproduce the Results Without Training
+
+```bash
+git clone https://github.com/samyajoypal/boundary-latent-asymmetry-vdc.git
+cd boundary-latent-asymmetry-vdc
+python3.11 -m venv .venv-analysis
+.venv-analysis/bin/python -m pip install -r current/requirements-analysis.txt
+.venv-analysis/bin/python current/check_release.py
+.venv-analysis/bin/python current/summarize.py
+.venv-analysis/bin/python current/plot_results.py
+```
+
+This checks source and result integrity, recomputes the statistics from all
+3,240 method scores, and writes JSON summaries and the two main result plots to
+the ignored `current/generated/` directory. It needs no GPU or original dataset
+downloads. Python 3.9--3.11 is supported by the pinned analysis dependencies.
+
+For GPU training, feature downloads, all recorded configurations, and the
+external TURTLE comparator, follow [the execution guide](current/README.md).
+Training is deliberately opt-in; printing a command does not launch it.
+
+| Location | Purpose |
+|---|---|
+| `current/code/` | Hash-verified scientific code and licensed mixture backend |
+| `current/protocols/` | Exact per-run settings, seed lists, and input hashes |
+| `current/results/` | Compact run-level results and diagnostic records |
+| `current/run.py` | Portable single-run execution; `--execute` starts training |
+| `current/summarize.py` | Statistical recomputation and reference checks |
+| `current/check_release.py` | Code-only publication and integrity checks |
+
+These are matched-prior comparisons, not a state-of-the-art claim. Adaptive
+improves ARI over matched Student-t on STL-10 and CIFAR-10; CIFAR-100-20 is
+inconclusive, and several contextual baselines remain stronger.
+
+The sections below describe the older exploratory release, not the current
+manuscript results. They remain available for historical reproducibility.
+
+<details>
+<summary>Historical release documentation (August 2026; not the current experiments)</summary>
+
+## Historical Release
+
+The historical reproducibility snapshot is frozen at tag
 `paper2-reproducibility-2026-08-25`. The repository intentionally excludes the
 article source, compiled article, supplementary manuscript, cover letter,
 journal template, and submission archive. Those editorial files are maintained
 separately by the authors.
 
-The paper studies when a flexible latent component changes a clustering
+The earlier paper version studied when a flexible latent component changes a clustering
 partition rather than only improving density fit. It reports a 600-run adaptive
 family study, a failed 20-seed NIG orientation confirmation, an independent
 100-seed replication, and a locked 20-seed Dry Bean application with seven
@@ -129,3 +182,13 @@ figures without rerunning neural training.
 
 Code is released under the MIT License. Third-party datasets remain subject to
 their respective licenses.
+
+</details>
+
+## License and Publication Boundary
+
+Code is MIT-licensed; bundled third-party code retains its own copyright and
+license. Datasets, pretrained weights, and the upstream TURTLE implementation
+are obtained separately under their respective terms. Manuscripts, supplementary
+documents, cover letters, journal templates, and submission archives are not
+part of this code release. The release checker enforces this boundary.
