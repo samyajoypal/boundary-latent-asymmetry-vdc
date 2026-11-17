@@ -10,8 +10,7 @@ from run import ROOT, verify_source
 
 REPO = ROOT.parent
 MANIFEST = ROOT / "RELEASE_SHA256.json"
-HISTORICAL_FIGURE = "results/paper2_dry_bean_confirmatory/analysis/dry_bean_boundary_margin.pdf"
-HISTORICAL_FIGURE_SHA = "555432d94fbe349fff6699cf3c26e828b5ba44aa5dd076ec811aba02eb77b605"
+ROOT_FILES = {".gitignore", "CITATION.cff", "LICENSE", "README.md"}
 FORBIDDEN_SUFFIXES = {".pdf", ".tex", ".bib", ".cls", ".sty", ".doc", ".docx", ".zip", ".tar", ".gz", ".pt", ".pth", ".npz", ".npy"}
 FORBIDDEN_NAMES = {"papers", "manuscripts", "supplementary", "submission_packages", ".env", "id_rsa", "id_ed25519"}
 SECRETS = [re.compile(x) for x in (
@@ -27,8 +26,8 @@ def digest(data):
 
 def check_file(name, data):
     path = Path(name)
-    if name == HISTORICAL_FIGURE and digest(data) == HISTORICAL_FIGURE_SHA:
-        return
+    if name not in ROOT_FILES and (len(path.parts) < 2 or path.parts[0] != "current"):
+        raise ValueError(f"File is outside the current release layout: {name}")
     if path.suffix.lower() in FORBIDDEN_SUFFIXES or FORBIDDEN_NAMES.intersection(p.lower() for p in path.parts):
         raise ValueError(f"Document, private file, or training artifact is excluded: {name}")
     if data.startswith((b"%PDF-", b"PK\x03\x04")):

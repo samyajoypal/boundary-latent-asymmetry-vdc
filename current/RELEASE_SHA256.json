@@ -1,6 +1,6 @@
 {
-  "README.md": "e34c826837e06cd4dfa42b898b5992d6f99f36531a6dabb2014bcde33ee60116",
-  "check_release.py": "92ea7841faa389c95499ac273e628701fcd901e277650300bc8f9a8fee7c0eaf",
+  "README.md": "526c8fc7d407b6f154e0670b105d748b31159e3069d9245c074395740411cc36",
+  "check_release.py": "dd37d06d630253027255195df1e001f01996e1b1a52996ef5de35bcbf9dcb902",
   "code/scripts/__init__.py": "b04ad0c6dc0de353c305f7a3c711a919736705c4417ce5d89585775476562bed",
   "code/scripts/paper2_fit_diagnostics.py": "8517f3289e32eea073a9a68261f962decece02a724f40557aaf0340a9fb7abc8",
   "code/scripts/paper2_turtle_comparator.py": "92b1ee0f30aebd76b5ca862e54c11388aa8a930668899e5c12760d6ef59ccb74",
@@ -119,5 +119,5 @@
   "run.py": "4f1733accfc481f22b673f1b24667a072c3c39167ee9b0494686bd1506d19b36",
   "source_manifest.json": "2eb5956a8232dd245c43e239c7d65b44b2892d63782cd24842fb37e7168722b6",
   "summarize.py": "cc5ccee3fe702911360b0e327aa83ce847f75f185b54bbb2aac840b175c7b20b",
-  "tests/test_reproduction.py": "3cb9f2d951f92615b13959764e4de63aa42f55adf5de078c3c6863fd0f23b527"
+  "tests/test_reproduction.py": "f5254a89d8fcad9e618ea4c168035914f9829c4068d3d167cb4151a13d03dafc"
 }

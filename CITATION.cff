@@ -10,6 +10,6 @@ authors:
     given-names: Rouven E.
     affiliation: "Chair of Data Analytics, Technical University of Kaiserslautern-Landau"
 date-released: 2026-11-17
-version: "2026.11.17"
+version: "2026.11.17.1"
 repository-code: "https://github.com/samyajoypal/boundary-latent-asymmetry-vdc"
 license: MIT

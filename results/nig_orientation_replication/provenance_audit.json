@@ -1,8 +1,0 @@
-{
-  "config_sha256": "4f6ef3afc6e1dc3c4075d39101d15c707808584bbc5421b89c235e10889628cc",
-  "errors": [],
-  "fmvmm_commit": "8b0570822a2d774221ca35e01b619d3b6b08ee54",
-  "n_manifests": 300,
-  "passed": true,
-  "source_tree_sha256": "47105f4b54b8808a5022e271b9e757d6a37775b61344a9713acf1f899b93a460"
-}

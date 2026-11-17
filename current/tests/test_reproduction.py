@@ -34,6 +34,15 @@ class PublicationGuardTests(unittest.TestCase):
     def test_scientific_code_is_allowed(self):
         check_release.check_file("current/model.py", b"def fit(x): return x\n")
 
+    def test_only_current_release_layout_is_allowed(self):
+        for name in ("src/model.py", "results/old.json", "configs/old.toml",
+                     "experiment_snapshots/model.py", "SHA256SUMS.txt"):
+            with self.subTest(name=name), self.assertRaises(ValueError):
+                check_release.check_file(name, b"test")
+        for name in check_release.ROOT_FILES:
+            with self.subTest(name=name):
+                check_release.check_file(name, b"test")
+
 
 class ReproductionTests(unittest.TestCase):
     @classmethod

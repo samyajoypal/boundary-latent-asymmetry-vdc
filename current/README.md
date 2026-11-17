@@ -5,9 +5,7 @@ supplementary PDF contain the scientific results. This Git tree supplies code,
 recorded configurations, compact run-level scores, and execution instructions;
 no separate evidence ZIP or manuscript download is needed to use it.
 
-The older root-level release concerns different exploratory experiments. Do not
-use its Dry Bean or NIG-orientation commands to reproduce the current tables.
-The current simulation has 20 seeds in each of ten designs; the image study has
+The simulation has 20 seeds in each of ten designs; the image study has
 20 seeds on STL-10, CIFAR-10, and CIFAR-100-20. All 3,240 method scores are retained.
 The image inputs are supervised ImageNet-pretrained ResNet-50 features, not raw
 pixels. Some prior seed outcomes were inspected and the dataset panel was chosen
